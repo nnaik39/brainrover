@@ -125,16 +125,16 @@
                         var particleLight, pointLight;
                         var particleLight2, pointLight2;
                         var dae, skin; 
-                        var x = 25;
+                        var x = 0;
                         var y = 75;
-                        var z = 39;
+                        var z = 0;
 
                         var loader = new THREE.ColladaLoader();
-                        loader.options.convertUpAxis = true;
-                        loader.load( './models/collada/brainmodel/brainmodel.dae', function ( collada ) {
+                        loader.options.chhonvertUpAxis = true;
+                        loader.load( './models/collada/brainmodel/BrainStem.dae', function ( collada ) {
 
                                 dae = collada.scene;
-                                skin = collada.skins[ 0 ];
+                                //skin = collada.skins[ 0 ];
 
                                 dae.scale.x = dae.scale.y = 1;
                                 dae.scale.z = 1;
@@ -219,6 +219,7 @@
                                 //theDiv.appendChild(container);
                                 //document.body.appendChild( container
                                 theDiv.appendChild( renderer.domElement );
+                                $( ".spinner" ).remove();
 
                                 stats = new Stats();
                                 stats.domElement.style.position = 'absolute';
