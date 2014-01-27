@@ -188,9 +188,9 @@
                                 scene.add( dae );
 
 
-                                particleLight = new THREE.Mesh( new THREE.SphereGeometry( 0.1, 4, 4 ), new THREE.MeshPhongMaterial( { color: 0x00ffdd } ) );
+                                particleLight = new THREE.Mesh( new THREE.SphereGeometry( 0.1, 4, 4 ), new THREE.MeshBasicMaterial( { color: 0x00ffdd } ) );
                                 scene.add( particleLight );
-                                particleLight2 = new THREE.Mesh( new THREE.SphereGeometry( 0.1, 4, 4 ), new THREE.MeshPhongMaterial( { color: 0xff00dd } ) );
+                                particleLight2 = new THREE.Mesh( new THREE.SphereGeometry( 0.1, 4, 4 ), new THREE.MeshBasicMaterial( { color: 0xff00dd } ) );
                                 scene.add( particleLight2 );
 
                                 // Lights
@@ -227,7 +227,7 @@
                                 theDiv.appendChild( stats.domElement );
 
                                 var setMaterial = function( node ) {
-                                   node.material = new THREE.MeshPhongMaterial({color: 0xff0000} );
+                                   node.material = new THREE.MeshBasicMaterial({color: 0xff0000} );
                                    console.log(node);
                                    if (node.children) {
                                      for (var i=0, thelength=node.children.length; i < thelength ; i++ ) {
@@ -236,6 +236,7 @@
                                    }
                                  }
                                  setMaterial(dae);
+                                 
  
                                 
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
