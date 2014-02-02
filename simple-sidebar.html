@@ -125,14 +125,14 @@
                         var camera, scene, renderer, objects;
                         var particleLight, pointLight;
                         var particleLight2, pointLight2;
-                        var dae, skin; 
+                        var dae, skin;
                         var x = 0;
                         var y = 75;
                         var z = 0;
 
                         var loader = new THREE.ColladaLoader();
-                        loader.options.convertUpAxis = true;
-                        loader.load( './models/collada/brainmodel/Untitled1.dae', function ( collada ) {
+                        loader.options.convertUpAxis = false;
+                        loader.load( './models/collada/brainmodel/Untitled2.dae', function ( collada ) {
 
                                 dae = collada.scene;
                                 //skin = collada.skins[ 0 ];
@@ -215,6 +215,64 @@
 
                                 renderer = new THREE.WebGLRenderer();
                                 renderer.setSize( window.innerWidth, window.innerHeight );
+
+//////////////////////////////
+//////////////////////////////
+                                var setMaterial = function( node ) {
+
+                                  node.material = new THREE.MeshBasicMaterial({color: 0xff0000} );
+
+                                  console.log(node);
+
+                                  if (node.children) {
+
+                                    for (var i=0, thelength=node.children.length; i < thelength ; i++ ) {
+
+                                      setMaterial(node.children[i]);
+
+                                    }
+
+                                  }
+
+                                }
+
+                                setMaterial(dae);
+
+
+
+//var setMaterial = function(node, material) {
+
+//  node.material = material;
+
+//  console.log(node);
+
+//  if (node.children) {
+
+//    for (var i = 0; i < node.children.length; i++) {
+
+//      setMaterial(node.children[i], material);
+
+//    }
+
+//  }
+
+// middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
+// cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
+// pituitary: dae.children[0].children[0].children[2].children[0].material.color.setRGB(1,1,1) 
+// left temporal lobe: dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1)
+// right temporal lobe: dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1)
+// left occipital lobe: dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1)
+// right occipital lobe: dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)
+// left frontal lobe:  dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(1,1,1)
+// right frontal lobe: dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(1,1,1)
+// left parietal lobe: dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,1,1)
+// right parietal lobe: dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,1)
+                                setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
+
+//////////////////////////////
+//////////////////////////////
+//////////////////////////////
+
                                 
                                 var theDiv = document.getElementById("Foo");
                                 //theDiv.appendChild(container);
