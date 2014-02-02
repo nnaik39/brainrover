@@ -110,14 +110,14 @@
         <div class="page-content inset">
           <div class="row">
             <div class="col-md-12" id="Foo">
-              <div class="spinner" id="myspinner">
-              <div class="rect1"></div>
-              <div class="rect2"></div>
-              <div class="rect3"></div>
-              <div class="rect4"></div>
-              <div class="rect5"></div>
-            </div>
-            <script>
+              <div class="spinner">
+      <div class="rect1"></div>
+      <div class="rect2"></div>
+      <div class="rect3"></div>
+      <div class="rect4"></div>
+      <div class="rect5"></div>
+    </div>
+              <script>
                         var controls;
                         var theDiv, stats;
 
@@ -125,16 +125,16 @@
                         var particleLight, pointLight;
                         var particleLight2, pointLight2;
                         var dae, skin; 
-                        var x = 25;
+                        var x = 0;
                         var y = 75;
-                        var z = 39;
+                        var z = 0;
 
                         var loader = new THREE.ColladaLoader();
-                        loader.options.convertUpAxis = true;
+                        loader.options.chhonvertUpAxis = true;
                         loader.load( './models/collada/brainmodel/BrainStem.dae', function ( collada ) {
 
                                 dae = collada.scene;
-                                skin = collada.skins[ 0 ];
+                                //skin = collada.skins[ 0 ];
 
                                 dae.scale.x = dae.scale.y = 1;
                                 dae.scale.z = 1;
@@ -143,8 +143,8 @@
                                 dae.position.y = 0;
                                 dae.position.z = 25;
                                 init();
-                                animate();
-                                document.getElementById("myspinner").style.visibility="hidden";
+                                animate(); 
+
                         } );
 
                         function init() {
@@ -219,6 +219,7 @@
                                 //theDiv.appendChild(container);
                                 //document.body.appendChild( container
                                 theDiv.appendChild( renderer.domElement );
+                                $( ".spinner" ).remove();
 
                                 stats = new Stats();
                                 stats.domElement.style.position = 'absolute';
@@ -350,7 +351,7 @@
       </div>
       
     </div>
-    
+	
     <!-- JavaScript -->
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.js"></script>
