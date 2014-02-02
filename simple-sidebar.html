@@ -16,7 +16,7 @@
     <link href="css/simple-sidebar.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-                <script src="build/three.min.js"></script>
+                <script src="build/three.js"></script>
 
                 <script src="js/loaders/ColladaLoader.js"></script>
 
@@ -132,7 +132,7 @@
 
                         var loader = new THREE.ColladaLoader();
                         loader.options.chhonvertUpAxis = true;
-                        loader.load( './models/collada/brainmodel/BrainStem.dae', function ( collada ) {
+                        loader.load( './models/collada/brainmodel/Sacrificial.dae', function ( collada ) {
 
                                 dae = collada.scene;
                                 //skin = collada.skins[ 0 ];
@@ -227,6 +227,27 @@
                                 stats.domElement.style.top = '0px';
                                 theDiv.appendChild( stats.domElement );
 
+                                var setMaterial = function( node ) {
+                                  node.material = new THREE.MeshBasicMaterial({color: 0xff0000} );
+                                  console.log(node);
+                                  if (node.children) {
+                                    for (var i=0, thelength=node.children.length; i < thelength ; i++ ) {
+                                      setMaterial(node.children[i]);
+                                    }
+                                  }
+                                }
+                                setMaterial(dae);
+
+//var setMaterial = function(node, material) {
+//  node.material = material;
+//  console.log(node);
+//  if (node.children) {
+//    for (var i = 0; i < node.children.length; i++) {
+//      setMaterial(node.children[i], material);
+//    }
+//  }
+//}
+//                                setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
                                 //
                                 
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
