@@ -91,7 +91,7 @@
         </div>
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
-          <div class="row">
+          <div class="row scrollable" >
             <div class="col-md-12" id="Foo">
               <div class="spinner" id="myspinner">
               <div class="rect1"></div>
@@ -356,6 +356,10 @@
         e.preventDefault();
         $("#wrapper").toggleClass("active");
     });
+  $( '.scrollable' ).
+  bind( 'mousewheel DOMMouseScroll', function ( e ) {
+  e.preventDefault();
+  });
     </script>
   </body>
 </html>
