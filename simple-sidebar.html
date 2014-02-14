@@ -1,24 +1,5 @@
-
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Starter Template for Bootstrap</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
-
-    <!-- Add custom CSS here -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-                <script src="build/three.min.js"></script>
-
-                <script src="js/loaders/ColladaLoader.js"></script>
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <meta name="description" content=""> <meta name="author" content=""> <title>Starter Template for Bootstrap</title> <!-- Bootstrap core CSS --> <link href="css/bootstrap.css" rel="stylesheet"> <!-- Add custom CSS here --> <link href="css/simple-sidebar.css" rel="stylesheet"> <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"> <script src="build/three.min.js"></script>
+<script src="js/loaders/ColladaLoader.js"></script>
 
                 <script src="js/Detector.js"></script>
                 <script src="js/libs/stats.min.js"></script>
@@ -102,7 +83,7 @@
       <!-- Page content -->
       <div id="page-content-wrapper">
         <div class="content-header">
-          <h1>
+         <h1>
             <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
             Simple Sidebar
           </h1>
@@ -132,10 +113,9 @@
 
                         var loader = new THREE.ColladaLoader();
                         loader.options.convertUpAxis = false;
-                        loader.load( './models/collada/brainmodel/Untitled2.dae', function ( collada ) {
+                        loader.load( './models/collada/brainmodel/NewBrain.dae', function ( collada ) {
 
                                 dae = collada.scene;
-                                //skin = collada.skins[ 0 ];
 
                                 dae.scale.x = dae.scale.y = 1;
                                 dae.scale.z = 1;
@@ -149,12 +129,8 @@
                         } );
 
                         function init() {
-                                //container = document.createElement( 'div' );
-                                //var theDiv = document.getElementById("The iD");
-                                //theDiv.appendChild(container);
-                                //document.body.appendChild( container );
                                 camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
-                                camera.position.set( 2, 2, 3 );
+                                camera.position.set( 10, 2, 3 );
 
 
 
@@ -183,7 +159,7 @@
 
                                 var line = new THREE.Line( geometry, material, THREE.LinePieces );
                                 scene.add( line );
- 
+
                                 // Add the COLLADA
 
                                 scene.add( dae );
@@ -208,19 +184,18 @@
                                 pointLight = new THREE.PointLight( 0x00ffdd, 1 );
                                 pointLight.position = particleLight.position;
                                 scene.add( pointLight );
-                                
+
                                 pointLight2 = new THREE.PointLight( 0xff00dd, 1 );
                                 pointLight2.position = particleLight2.position;
                                 scene.add( pointLight2 );
 
                                 renderer = new THREE.WebGLRenderer();
                                 renderer.setSize( window.innerWidth, window.innerHeight );
+                                renderer.setClearColor( 0x000000, 1);
 
-//////////////////////////////
-//////////////////////////////
                                 var setMaterial = function( node ) {
 
-                                  node.material = new THREE.MeshBasicMaterial({color: 0xff0000} );
+                                  node.material = new THREE.MeshPhongMaterial({color: 0x9999dd} );
 
                                   console.log(node);
 
@@ -236,25 +211,9 @@
 
                                 }
 
-                                setMaterial(dae);
+                               setMaterial(dae);
 
 
-
-//var setMaterial = function(node, material) {
-
-//  node.material = material;
-
-//  console.log(node);
-
-//  if (node.children) {
-
-//    for (var i = 0; i < node.children.length; i++) {
-
-//      setMaterial(node.children[i], material);
-
-//    }
-
-//  }
 
 // middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
 // cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
@@ -267,16 +226,10 @@
 // right frontal lobe: dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(1,1,1)
 // left parietal lobe: dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,1,1)
 // right parietal lobe: dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,1)
-                                setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
+//                                setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
 
 //////////////////////////////
-//////////////////////////////
-//////////////////////////////
-
-                                
                                 var theDiv = document.getElementById("Foo");
-                                //theDiv.appendChild(container);
-                                //document.body.appendChild( container
                                 theDiv.appendChild( renderer.domElement );
                                 $( ".spinner" ).remove();
 
@@ -285,8 +238,6 @@
                                 stats.domElement.style.top = '0px';
                                 theDiv.appendChild( stats.domElement );
 
-                                //
-                                
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
                                 window.addEventListener( 'resize', onWindowResize, false );
 
@@ -301,27 +252,17 @@
 
                         }
 
-                        
                         function onDocumentKeyDown(event) 
                         {
                                 switch ( event.keyCode) 
-                                {        
+                                {
                                         case 68: x += 0.1; break ; //right
                                         case 65: x -= 0.1; break ; //left
                                         case 87: z += 0.1; break ; //left
                                         case 83: z -= 0.1; break ; //right
-                                        //case 87: WaveLength+=0.1; break ; //w
-                                        //case 83: WaveLength-=0.1; break ; //s
-                                        //case 65: WaveLength+=0.1; break ; //a
-                                        //case 68: WaveLength -=0.1; break ; //d
-                                        //case 84: $("#Controls").slideToggle("normal"); 
-                                                        //$("#Title_And_Instructions").fadeToggle("normal");
-                                                        //break;
-                                        
                                 }
                         }
 
-                        //
 
                         var t = 0;
                         var clock = new THREE.Clock();
@@ -365,22 +306,14 @@
                         function render() {
 
                                 var timer = Date.now() * 0.0004;
-                                //var timer = 1;
-                                //camera.position.x = Math.cos( timer ) * 20;
-                                //camera.position.y = 2;
-                                //camera.position.z = Math.sin( timer ) * 20;
-
-                                //camera.lookAt( scene.position );
-
                                 particleLight.position.x = Math.sin( timer * 5 ) * 4;
                                 particleLight.position.y = Math.cos( timer * 3 ) * 4;
                                 particleLight.position.z = Math.cos( timer * 5 ) * 4;
-                                
                                 particleLight2.position.x = - Math.sin( timer * 5 ) * 4;
                                 particleLight2.position.y = -Math.cos( timer * 3 ) * 4;
                                 particleLight2.position.z = Math.cos( timer * 5 ) * 4;
                                 renderer.render( scene, camera );
-                                        
+
                                 dae.position.x = x;
                                 dae.position.y = 0;
                                 dae.position.z = z;
