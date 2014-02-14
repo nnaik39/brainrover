@@ -117,7 +117,7 @@
 //initialize tween here
                        var tween;
                         var controls;
-                        var theDiv, stats;
+                        var theDiv;
 
                         var camera, scene, renderer, objects;
                         var particleLight, pointLight;
@@ -250,10 +250,6 @@
                                 theDiv.appendChild( renderer.domElement );
                                 $( ".spinner" ).remove();
 
-                                stats = new Stats();
-                                stats.domElement.style.position = 'absolute';
-                                stats.domElement.style.top = '0px';
-                                theDiv.appendChild( stats.domElement );
 
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
                                 window.addEventListener( 'resize', onWindowResize, false );
@@ -316,7 +312,6 @@
 
                                 controls.update();
                                 render();
-                                stats.update();
 
                         }
 
