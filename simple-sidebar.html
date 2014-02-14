@@ -336,7 +336,7 @@
               <p class="lead">This simple sidebar template has a hint of JavaScript to make the template responsive. It also includes Font Awesome icon fonts.</p>
             </div>
             <div class="col-md-6">
-              <p class="well">The template still uses the default Bootstrap rows and columns.</p>
+              <p class="well" id="faded" style="display:none">The template still uses the default Bootstrap rows and columns.</p>
             </div>
             <div class="col-md-6">
               <p class="well">But the full-width layout means that you wont be using containers.</p>
@@ -366,10 +366,13 @@
         e.preventDefault();
         $("#wrapper").toggleClass("active");
     });
-  $( '.scrollable' ).
-  bind( 'mousewheel DOMMouseScroll', function ( e ) {
-  e.preventDefault();
-  });
+
+    $( '.scrollable' ).
+      bind( 'mousewheel DOMMouseScroll', function ( e ) {
+      e.preventDefault();
+    });
+
+    $("#faded").delay(2000).fadeToggle(1500);
     </script>
   </body>
 </html>
