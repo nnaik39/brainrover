@@ -5,6 +5,7 @@
                 <script src="js/libs/stats.min.js"></script>
                 <script src="js/OrbitControls.js"></script>
                 <script src="js/jquery.js"></script>
+                <script src="https://raw.github.com/sole/tween.js/master/build/tween.min.js"></script>
                     <style>
     .spinner {
       margin: 100px auto;
@@ -100,6 +101,8 @@
               <div class="rect5"></div>
             </div>
             <script>
+//initialize tween here
+                       var tween;
                         var controls;
                         var theDiv, stats;
 
@@ -133,11 +136,12 @@
                                 camera.position.set( 10, 2, 3 );
 
 
+                                
 
                                 scene = new THREE.Scene();
 
                                         controls = new THREE.OrbitControls( camera );
-                                controls.addEventListener( 'change', render );
+                               // controls.addEventListener( 'change', render );
 
 
                                 // Grid
@@ -314,9 +318,7 @@
                                 particleLight2.position.z = Math.cos( timer * 5 ) * 4;
                                 renderer.render( scene, camera );
 
-                                dae.position.x = x;
-                                dae.position.y = 0;
-                                dae.position.z = z;
+                                //moved this code to initialization
 
                         }
 
