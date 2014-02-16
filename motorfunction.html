@@ -320,14 +320,14 @@
 
                         function render() {
 
-                                var timer = Date.now() * 0.0004;
+                                //var timer = Date.now() * 0.0004;
                                 particleLight.position.x = Math.sin( timer * 5 ) * 4;
                                 particleLight.position.y = Math.cos( timer * 3 ) * 4;
                                 particleLight.position.z = Math.cos( timer * 5 ) * 4;
                                 particleLight2.position.x = - Math.sin( timer * 5 ) * 4;
                                 particleLight2.position.y = -Math.cos( timer * 3 ) * 4;
                                 particleLight2.position.z = Math.cos( timer * 5 ) * 4;
-                                //renderer.render( scene, camera );
+                                renderer.render( scene, camera );
 
                                 //moved this code to initialization
 
