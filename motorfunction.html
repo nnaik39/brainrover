@@ -279,6 +279,8 @@
                                           dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0.8,0.2,0);
                                           break; //right parietal lobe
                                         case 76:
+                                        var intro = document.getElementById("intro");
+                                     intro.play();
                                         dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1);
                                         dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(1,0,1)},6000);
@@ -390,5 +392,10 @@
 
     $("#faded").delay(2000).fadeToggle(1500);
     </script>
+<audio hidden id="intro">
+  <source src="audio/intro.ogg" type="audio/ogg">
+  <source src="audio/intro.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
   </body>
 </html>
