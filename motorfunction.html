@@ -281,8 +281,8 @@
                                         case 76:
                                         var intro = document.getElementById("intro");
                                      intro.play();
-                                        dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1);
-                                        dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1);
+                                     setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 3000);
+                                     setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1),3000);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(1,0,1)},6000);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},6000);
                                         
