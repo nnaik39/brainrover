@@ -274,9 +274,23 @@
                                         case 65: x -= 0.1; break ; //left
                                         case 87: z += 0.1; break ; //left
                                         case 83: z -= 0.1; break ; //right
-                                        case 84: dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0.8,0.2,0); break ; //right parietal lobe
-                                        case 76: dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1), dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1), dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,0,1), dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,0,1); break;
-                            } 
+                                        case 84: 
+                                          dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0.8,0.2,0);
+                                          dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0.8,0.2,0);
+                                          break; //right parietal lobe
+                                        case 76:
+                                        dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1);
+                                        dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1);
+                                        setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(1,0,1)},6000);
+                                        setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},6000);
+                                        
+                                  
+                                        setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(1,0,1)},12000);
+                                        setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,0,1)},12000);
+                                        setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(1,0,1)},18000);
+                                        setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,0,1)},18000);
+                      break;
+                            }
                         }
 
 
@@ -296,8 +310,9 @@
 
                                         // guess this can be done smarter...
 
-                                        // (Indeed, there are way more frames than needed and interpolation is not used at all
+                                        // (Indeedoninterpolation is not used at all
                                         //  could be something like - one morph per each skinning pose keyframe, or even less,
+                                        n
                                         //  animation could be resampled, morphing interpolation handles sparse keyframes quite well.
                                         //  Simple animation cycles like this look ok with 10-15 frames instead of 100 ;)
 
