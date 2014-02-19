@@ -303,10 +303,12 @@
                                         setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0,0.3,0.7)}, 21900);
                                         setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 21900);
                       
-                                        setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 12000);
-                                        setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 12000);
-                                        setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 12000);
-                                        setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 12000);
+                                        var cb_fro = document.getElementById("frontal-lobe");
+                                        setTimeout(function() {cb_fro.play()}, 30000)
+                                        setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
+                                        setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
+                                        setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
+                                        setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
                       break;
                             }
                         }
@@ -433,8 +435,8 @@ Your browser does not support the audio element.
 </audio>
 
 <audio hidden id="frontal-lobe">
-  <source src="audio/" type="audio/ogg">
-  <source src="audio/" type="audio/mpeg">
+  <source src="audio/cb5.ogg" type="audio/ogg">
+  <source src="audio/b5.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 
