@@ -242,13 +242,39 @@
 	//spritey.position.set(55,105,55);
 	//scene.add( spritey );
 	
-}
+//}
 
-function makeTextSprite( message, parameters )
-{
-	if ( parameters === undefined ) parameters = {};
+
+
+// middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
+// cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
+// pituitary: dae.children[0].children[0].children[2].children[0].material.color.setRGB(1,1,1) 
+// left temporal lobe: dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1)
+// right temporal lobe: dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1)
+// left occipital lobe: dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1)
+// right occipital lobe: dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)
+// left frontal lobe:  dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(1,1,1)
+// right frontal lobe: dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(1,1,1)
+// left parietal lobe: dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,1,1)
+// right parietal lobe: dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,1)
+//                                setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
+
+//////////////////////////////
+                                var theDiv = document.getElementById("Foo");
+                                theDiv.appendChild( renderer.domElement );
+                                $( ".spinner" ).remove();
+
+
+                                document.addEventListener( 'keydown', onDocumentKeyDown, false);
+                                window.addEventListener( 'resize', onWindowResize, false );
+
+                        } // end of init
+
+//function makeTextSprite( message, parameters )
+//{
+//	if ( parameters === undefined ) parameters = {};
 	
-	var fontface = parameters.hasOwnProperty("fontface") ? 
+/*	var fontface = parameters.hasOwnProperty("fontface") ? 
 		parameters["fontface"] : "Arial";
 	
 	var fontsize = parameters.hasOwnProperty("fontsize") ? 
@@ -298,32 +324,7 @@ function makeTextSprite( message, parameters )
 	var sprite = new THREE.Sprite( spriteMaterial );
 	sprite.scale.set(100,50,1.0);
 	return sprite;	
-}
-
-
-// middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
-// cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
-// pituitary: dae.children[0].children[0].children[2].children[0].material.color.setRGB(1,1,1) 
-// left temporal lobe: dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1)
-// right temporal lobe: dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1)
-// left occipital lobe: dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1)
-// right occipital lobe: dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)
-// left frontal lobe:  dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(1,1,1)
-// right frontal lobe: dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(1,1,1)
-// left parietal lobe: dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,1,1)
-// right parietal lobe: dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,1)
-//                                setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
-
-//////////////////////////////
-                                var theDiv = document.getElementById("Foo");
-                                theDiv.appendChild( renderer.domElement );
-                                $( ".spinner" ).remove();
-
-
-                                document.addEventListener( 'keydown', onDocumentKeyDown, false);
-                                window.addEventListener( 'resize', onWindowResize, false );
-
-                        }
+} */
 
                         function onWindowResize() {
 
