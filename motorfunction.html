@@ -23,7 +23,7 @@
                 <script src="js/OrbitControls.js"></script>
                 <script src="js/jquery.js"></script>
                 <script src="js/jquery-ui.js"></script>
-               
+
                 <script src="https://raw.github.com/sole/tween.js/master/build/tween.min.js"></script>
                     <style>
     .spinner {
@@ -83,9 +83,9 @@
   </head>
 
   <body>
-  
+
     <div id="wrapper">
-      
+
       <!-- Sidebar -->
       <div id="sidebar-wrapper">
         <ul class="sidebar-nav">
@@ -119,7 +119,7 @@
             </div>
             <script>
 //initialize tween here
-                       var tween;
+                        var tween;
                         var controls;
                         var theDiv;
 
@@ -130,7 +130,6 @@
                         var x = 0;
                         var y = 0;
                         var z = 0;
-
 
                         var loader = new THREE.ColladaLoader();
                         loader.options.convertUpAxis = false;
@@ -235,19 +234,15 @@
 
                                setMaterial(dae);
 
+var spritey = makeTextSprite( " Hello, ", { fontsize: 24, borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 
-var spritey = makeTextSprite( " Hello, ", 
-		{ fontsize: 24, borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
-	spritey.position.set(-85,105,55);
+	spritey.position.set(-10,10,0);
 	scene.add( spritey );
 
-	var spritey = makeTextSprite( " World! ", 
-	{ fontsize: 32, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
-	spritey.position.set(55,105,55);
+	var spritey = makeTextSprite( " World! ", { fontsize: 32, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+	spritey.position.set(0,10,0);
 	scene.add( spritey );
 	
-}
-
 
 // middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
 // cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
@@ -274,60 +269,81 @@ var spritey = makeTextSprite( " Hello, ",
 
                         } // end of init
 
+
 function makeTextSprite( message, parameters )
 {
-	if ( parameters === undefined ) parameters = {};
-	
-	var fontface = parameters.hasOwnProperty("fontface") ? 
-		parameters["fontface"] : "Arial";
-	
-	var fontsize = parameters.hasOwnProperty("fontsize") ? 
-		parameters["fontsize"] : 18;
-	
-	var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
-		parameters["borderThickness"] : 4;
-	
-	var borderColor = parameters.hasOwnProperty("borderColor") ?
-		parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
-	
-	var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
-		parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
+        if ( parameters === undefined ) parameters = {};
+        
+        var fontface = parameters.hasOwnProperty("fontface") ? 
+                parameters["fontface"] : "Arial";
+        
+        var fontsize = parameters.hasOwnProperty("fontsize") ? 
+                parameters["fontsize"] : 18;
+        
+        var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
+                parameters["borderThickness"] : 4;
+        
+        var borderColor = parameters.hasOwnProperty("borderColor") ?
+                parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
+        
+        var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
+                parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
 
-	var spriteAlignment = THREE.SpriteAlignment.topLeft;
-
-	var context = canvas.getContext('2d');
-	context.font = "Bold " + fontsize + "px " + fontface;
+        var spriteAlignment = THREE.SpriteAlignment.topLeft;
+                
+        var canvas = document.createElement('canvas');
+        var context = canvas.getContext('2d');
+        context.font = "Bold " + fontsize + "px " + fontface;
     
-	// get size data (height depends only on font size)
-	var metrics = context.measureText( message );
-	var textWidth = metrics.width;
-	
-	// background color
-	context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
-								  + backgroundColor.b + "," + backgroundColor.a + ")";
-	// border color
-	context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
-								  + borderColor.b + "," + borderColor.a + ")";
+        // get size data (height depends only on font size)
+        var metrics = context.measureText( message );
+        var textWidth = metrics.width;
+        
+        // background color
+        context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
+                                                                  + backgroundColor.b + "," + backgroundColor.a + ")";
+        // border color
+        context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
+                                                                  + borderColor.b + "," + borderColor.a + ")";
 
-	context.lineWidth = borderThickness;
-	roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
-	// 1.4 is extra height factor for text below baseline: g,j,p,q.
-	
-	// text color
-	context.fillStyle = "rgba(0, 0, 0, 1.0)";
+        context.lineWidth = borderThickness;
+        roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
+        // 1.4 is extra height factor for text below baseline: g,j,p,q.
+        
+        // text color
+        context.fillStyle = "rgba(0, 0, 0, 1.0)";
 
-	context.fillText( message, borderThickness, fontsize + borderThickness);
-	
-	// canvas contents will be used for a texture
-	var texture = new THREE.Texture(canvas) 
-	texture.needsUpdate = true;
+        context.fillText( message, borderThickness, fontsize + borderThickness);
+        
+        // canvas contents will be used for a texture
+        var texture = new THREE.Texture(canvas) 
+        texture.needsUpdate = true;
 
-	var spriteMaterial = new THREE.SpriteMaterial( 
-		{ map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
-	var sprite = new THREE.Sprite( spriteMaterial );
-	sprite.scale.set(100,50,1.0);
-	return sprite;	
-} 
+        var spriteMaterial = new THREE.SpriteMaterial( 
+                { map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
+        var sprite = new THREE.Sprite( spriteMaterial );
+        sprite.scale.set(100,50,1.0);
+        return sprite;  
+}
+
+// function for drawing rounded rectangles
+function roundRect(ctx, x, y, w, h, r) 
+{
+    ctx.beginPath();
+    ctx.moveTo(x+r, y);
+    ctx.lineTo(x+w-r, y);
+    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+    ctx.lineTo(x+w, y+h-r);
+    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+    ctx.lineTo(x+r, y+h);
+    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+    ctx.lineTo(x, y+r);
+    ctx.quadraticCurveTo(x, y, x+r, y);
+    ctx.closePath();
+    ctx.fill();
+        ctx.stroke();   
+}
+
 
                         function onWindowResize() {
 
@@ -483,32 +499,32 @@ function makeTextSprite( message, parameters )
     $("#faded").delay(2000).fadeToggle(1500);
     </script>
     <audio hidden id="intro">
-  <source src="audio/intro.ogg" type="audio/ogg">
-  <source src="audio/intro.mp3" type="audio/mpeg">
+  <source src="audio/intro.ogg" type="audio/ogg"/>
+  <source src="audio/intro.mp3" type="audio/mpeg"/>
 Your browser does not support the audio element.
 </audio>
 
 <audio hidden id="occipital-lobe">
-  <source src="audio/cb2.ogg" type="audio/ogg">
-  <source src="audio/cb2.mp3" type="audio/mpeg">
+  <source src="audio/cb2.ogg" type="audio/ogg"/>
+  <source src="audio/cb2.mp3" type="audio/mpeg"/>
 Your browser does not support the audio element.
 </audio>
 
 <audio hidden id="parietal-lobe">
-  <source src="audio/cb3.ogg" type="audio/ogg">
-  <source src="audio/cb3.mp3" type="audio/mpeg">
+  <source src="audio/cb3.ogg" type="audio/ogg"/>
+  <source src="audio/cb3.mp3" type="audio/mpeg"/>
 Your browser does not support the audio element.
 </audio>
 
 <audio hidden id="cerebellum">
-  <source src="audio/cb4.ogg" type="audio/ogg">
-  <source src="audio/cb4.mp3" type="audio/mpeg">
+  <source src="audio/cb4.ogg" type="audio/ogg"/>
+  <source src="audio/cb4.mp3" type="audio/mpeg"/>
 Your browser does not support the audio element.
 </audio>
 
 <audio hidden id="frontal-lobe">
-  <source src="audio/cb5.ogg" type="audio/ogg">
-  <source src="audio/b5.mp3" type="audio/mpeg">
+  <source src="audio/cb5.ogg" type="audio/ogg"/>
+  <source src="audio/b5.mp3" type="audio/mpeg"/>
 Your browser does not support the audio element.
 </audio>
 
