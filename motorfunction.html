@@ -24,7 +24,7 @@
                 <script src="js/jquery.js"></script>
                 <script src="js/jquery-ui.js"></script>
 
-                <script src="https://raw.github.com/sole/tween.js/master/build/tween.min.js"></script>
+                <script src="js/Tween.js"></script>
                     <style>
     .spinner {
       margin: 100px auto;
@@ -119,7 +119,6 @@
             </div>
             <script>
 //initialize tween here
-                        var tween;
                         var controls;
                         var theDiv;
 
@@ -130,6 +129,18 @@
                         var x = 0;
                         var y = 0;
                         var z = 0;
+
+                        //added for tween example
+                        var tween;
+                        var startTime = Date.now();
+                        var position = { x : 0, y: 0 };
+                        var target = { x : 0, y: 10 };
+                        var position2 = { x : 0, y: 10 };
+                        var tween = new TWEEN.Tween(position).to(target, 2000);
+                        //added for tween example
+
+                        var target2 = { x : 10, y: 10 };
+                        var tween2 = new TWEEN.Tween(position2).to(target2, 2000);
 
                         var loader = new THREE.ColladaLoader();
                         loader.options.convertUpAxis = false;
@@ -153,7 +164,6 @@
                                 camera.position.set( 10, 2, 3 );
 
 
-                                
 
                                 scene = new THREE.Scene();
 
@@ -234,12 +244,12 @@
 
                                setMaterial(dae);
 
-var spritey = makeTextSprite( " Hello, ", { fontsize: 24, borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
+var spritey = makeTextSprite( " Hello, ", { fontsize: 10, borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 
 	spritey.position.set(-10,10,0);
 	scene.add( spritey );
 
-	var spritey = makeTextSprite( " World! ", { fontsize: 32, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+	var spritey = makeTextSprite( " Brainz! ", { fontsize: 12, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	spritey.position.set(0,10,0);
 	scene.add( spritey );
 	
@@ -266,6 +276,20 @@ var spritey = makeTextSprite( " Hello, ", { fontsize: 24, borderColor: {r:255, g
 
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
                                 window.addEventListener( 'resize', onWindowResize, false );
+
+                                tween.onUpdate(function(){
+                                      camera.position.x = position.x;
+                                      camera.position.y = position.y;
+                                });
+                                tween2.onUpdate(function(){
+                                      camera.position.x = position2.x;
+                                      camera.position.y = position2.y;
+                                });
+
+                                tween.easing(TWEEN.Easing.Elastic.InOut);
+                                tween2.easing(TWEEN.Easing.Elastic.InOut);
+
+                                tween.start();
 
                         } // end of init
 
@@ -358,7 +382,7 @@ function roundRect(ctx, x, y, w, h, r)
                         {
                                 switch ( event.keyCode) 
                                 {
-                                        case 68: x += 0.1; break ; //right
+                                        case 68: x += 0.1; break; //right
                                         case 65: x -= 0.1; break ; //left
                                         case 87: z += 0.1; break ; //left
                                         case 83: z -= 0.1; break ; //right
@@ -373,7 +397,7 @@ function roundRect(ctx, x, y, w, h, r)
                                         var cb_occ = document.getElementById("occipital-lobe");
                                         setTimeout(function() {cb_occ.play()}, 7700);
                                         
-                                        setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
+                                        setTimeout(function() {tween2.start(); dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
                                         setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1)},7500);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(1,0,1)},7500);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},7500);
@@ -437,6 +461,11 @@ function roundRect(ctx, x, y, w, h, r)
                                 }
 
                                 controls.update();
+
+                                //added for tween example
+                                TWEEN.update();
+                                //added for tween example
+
                                 render();
 
                         }
