@@ -22,58 +22,59 @@
                 <script src="js/jquery.js"></script>
                 <script src="https://raw.github.com/sole/tween.js/master/build/tween.min.js"></script>
                     <style>
-    .spinner {
-      margin: 100px auto;
-      width: 50px;
-      height: 30px;
-      text-align: center;
-      font-size: 10px;
-    }
+                      .spinner {
+                        margin: 100px auto;
+                        width: 50px;
+                        height: 30px;
+                        text-align: center;
+                        font-size: 10px;
+                      }
 
-    .spinner > div {
-      background-color: #333;
-      height: 100%;
-      width: 6px;
-      display: inline-block;
+                    .spinner > div {
+                      background-color: #333;
+                      height: 100%;
+                      width: 6px;
+                      display: inline-block;
       
-      -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
-      animation: stretchdelay 1.2s infinite ease-in-out;
-    }
+                      -webkit-animation: stretchdelay 1.2s infinite ease-in-out;
+                      animation: stretchdelay 1.2s infinite ease-in-out;
+                    }
 
-    .spinner .rect2 {
-      -webkit-animation-delay: -1.1s;
-      animation-delay: -1.1s;
-    }
+                  .spinner .rect2 {
+                      -webkit-animation-delay: -1.1s;
+                      animation-delay: -1.1s;
+                    }
 
-    .spinner .rect3 { 
-      -webkit-animation-delay: -1.0s;
-      animation-delay: -1.0s;
-    }
+                .spinner .rect3 { 
+                    -webkit-animation-delay: -1.0s;
+                    animation-delay: -1.0s;
+                }
 
-    .spinner .rect4 {
-      -webkit-animation-delay: -0.9s;
-      animation-delay: -0.9s;
-    }
+              .spinner .rect4 {
+                  -webkit-animation-delay: -0.9s;
+                  animation-delay: -0.9s;
+                }
 
-    .spinner .rect5 {
-      -webkit-animation-delay: -0.8s;
-      animation-delay: -0.8s;
-    }
+              .spinner .rect5 {
+                  -webkit-animation-delay: -0.8s;
+                  animation-delay: -0.8s;
+              }
 
-    @-webkit-keyframes stretchdelay {
-      0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
-      20% { -webkit-transform: scaleY(1.0) }
-    }
+              @-webkit-keyframes stretchdelay {
+                  0%, 40%, 100% { -webkit-transform: scaleY(0.4) }  
+                  20% { -webkit-transform: scaleY(1.0) }
+              }
 
-    @keyframes stretchdelay {
-      0%, 40%, 100% { 
-        transform: scaleY(0.4);
-        -webkit-transform: scaleY(0.4);
-      } 20% {
-        transform: scaleY(1.0);
-        -webkit-transform: scaleY(1.0);
-      }
-    }
+            @keyframes stretchdelay {
+                0%, 40%, 100% { 
+                transform: scaleY(0.4);
+                -webkit-transform: scaleY(0.4);
+                } 20% {
+                    transform: scaleY(1.0);
+                    -webkit-transform: scaleY(1.0);
+                }
+          }
+          
     </style>
 
   </head>
@@ -410,35 +411,35 @@
 
     $("#faded").delay(2000).fadeToggle(1500);
     </script>
-    <audio hidden id="intro">
-  <source src="audio/intro.ogg" type="audio/ogg">
-  <source src="audio/intro.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+      <audio hidden id="intro">
+        <source src="audio/intro.ogg" type="audio/ogg">
+        <source src="audio/intro.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+      </audio>
 
-<audio hidden id="occipital-lobe">
-  <source src="audio/cb2.ogg" type="audio/ogg">
-  <source src="audio/cb2.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+      <audio hidden id="occipital-lobe">
+        <source src="audio/cb2.ogg" type="audio/ogg">
+        <source src="audio/cb2.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+    </audio>
 
-<audio hidden id="parietal-lobe">
-  <source src="audio/cb3.ogg" type="audio/ogg">
-  <source src="audio/cb3.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+    <audio hidden id="parietal-lobe">
+      <source src="audio/cb3.ogg" type="audio/ogg">
+      <source src="audio/cb3.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-<audio hidden id="cerebellum">
-  <source src="audio/cb4.ogg" type="audio/ogg">
-  <source src="audio/cb4.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+    <audio hidden id="cerebellum">
+      <source src="audio/cb4.ogg" type="audio/ogg">
+      <source src="audio/cb4.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
-<audio hidden id="frontal-lobe">
-  <source src="audio/cb5.ogg" type="audio/ogg">
-  <source src="audio/b5.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
+    <audio hidden id="frontal-lobe">
+      <source src="audio/cb5.ogg" type="audio/ogg">
+      <source src="audio/b5.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
 
 
   </body>
