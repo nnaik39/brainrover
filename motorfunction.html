@@ -282,7 +282,7 @@
                                         var intro = document.getElementById("intro");
                                         intro.play();
                                         
-                                        var cb_occ = document.getElementById("cb-occipital-lobe");
+                                        var cb_occ = document.getElementById("occipital-lobe");
                                         setTimeout(function() {cb_occ.play()}, 7700);
                                         
                                         setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
@@ -290,7 +290,7 @@
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(1,0,1)},7500);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},7500);
                                         
-                                        var cb_par = document.getElementById("cb-parietal-lobe");
+                                        var cb_par = document.getElementById("parietal-lobe");
                                         setTimeout(function() {cb_par.play()}, 14500);
                                         
                                         setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0.8,0,0.2)},14400);
@@ -298,21 +298,18 @@
                                         setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0.8,0,0.2)},14400);
                                         setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0.8,0,0.2)},14400);
                       
-                                        var cb_cer = document.getElementById("cb-cerebellum");
+                                        var cb_cer = document.getElementById("cerebellum");
                                         setTimeout(function(){cb_cer.play()}, 22000);
                                         setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0,0.3,0.7)}, 21900);
                                         setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 21900);
                       
-                                        var cb_fro = document.getElementById("cb-frontal-lobe");
+                                        var cb_fro = document.getElementById("frontal-lobe");
                                         setTimeout(function() {cb_fro.play()}, 30000)
                                         setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
                                         setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
                                         setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
                                         setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
                       break;
-                      
-                                      case 82:
-                                        
                             }
                         }
 
@@ -419,25 +416,25 @@
 Your browser does not support the audio element.
 </audio>
 
-<audio hidden id="cb-occipital-lobe">
+<audio hidden id="occipital-lobe">
   <source src="audio/cb2.ogg" type="audio/ogg">
   <source src="audio/cb2.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 
-<audio hidden id="cb-parietal-lobe">
+<audio hidden id="parietal-lobe">
   <source src="audio/cb3.ogg" type="audio/ogg">
   <source src="audio/cb3.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 
-<audio hidden id="cb-cerebellum">
+<audio hidden id="cerebellum">
   <source src="audio/cb4.ogg" type="audio/ogg">
   <source src="audio/cb4.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
 </audio>
 
-<audio hidden id="cb-frontal-lobe">
+<audio hidden id="frontal-lobe">
   <source src="audio/cb5.ogg" type="audio/ogg">
   <source src="audio/b5.mp3" type="audio/mpeg">
 Your browser does not support the audio element.
