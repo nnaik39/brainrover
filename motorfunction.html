@@ -380,18 +380,22 @@ function roundRect(ctx, x, y, w, h, r)
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},7500);
                                         
                                         var cb_par = document.getElementById("parietal-lobe");
-                                        var spritey = makeTextSprite( " Parietal Lobe ", { fontsize: 10, borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
-	 		     		spritey.position.set(-2,2,2);
+                                        var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
+	 		     		spritey1.position.set(-2,2,2);
 	 		     
                                         setTimeout(function() {cb_par.play()}, 14500);
-                                        setTimeout(function() {scene.add( spritey )}, 14400)
+                                        setTimeout(function() {scene.add( spritey1 )}, 14400);
                                         setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0.8,0,0.2)},14400);
                                         setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(0.8,0,0.2)},14400);
                                         setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0.8,0,0.2)},14400);
                                         setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0.8,0,0.2)},14400);
                       
                                         var cb_cer = document.getElementById("cerebellum");
+                                         var spritey2 = makeTextSprite( " Cerebellum ", { fontsize: 10, borderColor: {r:0, g:255, b:0, a:1.0}, backgroundColor: {r:0, g:255, b:100, a:0.8} } );
+	 				 spritey2.position.set(-2,-2,2);
+	                     
                                         setTimeout(function(){cb_cer.play()}, 22000);
+                                        setTimeout(function(){scene.add( spritey2 )}, 21900);
                                         setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0,0.3,0.7)}, 21900);
                                         setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 21900);
                       
