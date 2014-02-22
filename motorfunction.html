@@ -234,9 +234,7 @@
 
                                setMaterial(dae);
 
-                                        var spritey = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
-	                     		spritey.position.set(2,2,2);
-
+                                       
 // middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
 // cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
 // pituitary: dae.children[0].children[0].children[2].children[0].material.color.setRGB(1,1,1) 
@@ -398,7 +396,11 @@ function roundRect(ctx, x, y, w, h, r)
                                         setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 21900);
                       
                                         var cb_fro = document.getElementById("frontal-lobe");
+                                         var spritey3 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
+	                     		spritey3.position.set(2,2,2);
+
                                         setTimeout(function() {cb_fro.play()}, 30000)
+                                        setTimeout(function() {scene.add( spritey3 )}, 29721)
                                         setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
                                         setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
                                         setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
