@@ -234,7 +234,7 @@
 
                                setMaterial(dae);
 
-                             var spritey = makeTextSprite( " Hello, ", { fontsize: 4, borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
+                             var spritey = makeTextSprite( " Hello, ", { fontsize: 8, borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 
 	 		     spritey.position.set(-10,10,0);
 	                     scene.add( spritey );
@@ -322,7 +322,10 @@ function makeTextSprite( message, parameters )
         var spriteMaterial = new THREE.SpriteMaterial( 
                 { map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
         var sprite = new THREE.Sprite( spriteMaterial );
-        sprite.scale.set(100,50,1.0);
+   
+        sprite.scale.set(10,5,1.0);
+   // was     sprite.scale.set(100,50,1.0);
+   
         return sprite;  
 }
 
