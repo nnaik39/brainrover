@@ -357,9 +357,9 @@ function roundRect(ctx, x, y, w, h, r)
                                         case 87: z += 0.1; break ; //left
                                         case 83: z -= 0.1; break ; //right
                                         case 84: 
-                                          dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0.8,0.2,0);
-                                          dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0.8,0.2,0);
-                                          break; //right parietal lobe
+                                          setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
+
+                                          break; //reset
                                         case 76:
                                         var intro = document.getElementById("intro");
                                         intro.play();
@@ -406,6 +406,8 @@ function roundRect(ctx, x, y, w, h, r)
                                         setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
                                         setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
                       break;
+                      
+                      
                             }
                         }
 
