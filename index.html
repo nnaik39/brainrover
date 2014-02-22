@@ -236,7 +236,7 @@
     var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey.position.set(-2,-1,2);
 	                     		scene.add( spritey );
-	                     		 var spritey8 = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+	                 var spritey8 = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey8.position.set(-2,-1,-3);
 	                     		scene.add( spritey8 );
 	  
@@ -254,7 +254,7 @@
 	                     		scene.add( spritey3 );
 	          var spritey6 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
 	                     		spritey6.position.set(2,2,-2);
-	                     		scene.add( spritey3 );
+	                     		scene.add( spritey6 );
 	   var spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
               spritey4.position.set(2, -1, -2);
               scene.add( spritey4 );
@@ -272,11 +272,7 @@
               scene.add( spritey9 );
               dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1);
               dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1);
-           var spritey10 = makeTextSprite( " Midbrain ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0} } );
-              spritey10.position.set(2, 2, 0);
-              scene.add( spritey10 );
-              dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,1,0);
-              dae.children[0].children[0].children[4].children[0].material.ambient.setRGB(1,1,0);
+
 // middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
 // cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
 // pituitary: dae.children[0].children[0].children[2].children[0].material.color.setRGB(1,1,1) 
