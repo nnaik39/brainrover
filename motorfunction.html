@@ -373,8 +373,11 @@ function roundRect(ctx, x, y, w, h, r)
                                         intro.play();
                                         
                                         var cb_occ = document.getElementById("occipital-lobe");
+                                        var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+	                     		spritey.position.set(-2,-1,2);
+	                     		
                                         setTimeout(function() {cb_occ.play()}, 7700);
-                                        
+                                        setTimeout(function() {scene.add( spritey ) }, 7700);
                                         setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
                                         setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1)},7500);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(1,0,1)},7500);
