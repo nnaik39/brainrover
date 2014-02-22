@@ -410,6 +410,8 @@ function roundRect(ctx, x, y, w, h, r)
                       break;
                       
                       			case 69: 
+                      				var introl = document.getElementById("introl");
+                      				introl.play();
                       				//step 1: left side of cerebral cortex
                       				dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1); //temporal
                       				dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1); //occipital
@@ -555,10 +557,14 @@ function roundRect(ctx, x, y, w, h, r)
 
    <audio hidden id="frontal-lobe">
   	<source src="audio/cb5.ogg" type="audio/ogg"/>
-  	<source src="audio/b5.mp3" type="audio/mpeg"/>
+  	<source src="audio/cb5.mp3" type="audio/mpeg"/>
 		Your browser does not support the audio element.
    </audio>
-
+<audio hidden id="introl">
+  	<source src="audio/introl.ogg" type="audio/ogg"/>
+  	<source src="audio/introl.mp3" type="audio/mpeg"/>
+		Your browser does not support the audio element.
+   </audio>
 
   </body>
 </html>
