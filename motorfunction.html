@@ -409,6 +409,26 @@ function roundRect(ctx, x, y, w, h, r)
                                         setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
                       break;
                       
+                      			case 69: 
+                      				//step 1: left side of cerebral cortex
+                      				dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1); //temporal
+                      				dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1); //occipital
+                      				dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(1,1,1); //frontal
+                      				dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,1,1); //parietal
+                      				//step 2: frontal lobe
+                      				dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(1,1,1);
+						dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(1,1,1);
+						//step 3: right side of cerebral cortex
+						dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1); //temporal
+                      				dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1); //occipital
+                      				 dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(1,1,1); //frontal
+                      				dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,1); //parietal
+                      				//step 4: occipital lobe
+                      				dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1);
+                      				dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1);
+                      				//step 5: parietal lobe
+                      				dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,1,1);
+                      				dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,1);
                       
                             }
                         }
