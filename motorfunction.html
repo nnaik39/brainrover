@@ -234,10 +234,8 @@
 
                                setMaterial(dae);
 
-                             var spritey = makeTextSprite( " Cerebellum ", { fontsize: 10, borderColor: {r:0, g:255, b:0, a:1.0}, backgroundColor: {r:0, g:255, b:100, a:0.8} } );
-	 		     spritey.position.set(-2,-2,2);
-	                     scene.add( spritey );
-
+                                        var spritey = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
+	                     		spritey.position.set(2,2,2);
 
 // middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
 // cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
@@ -380,7 +378,7 @@ function roundRect(ctx, x, y, w, h, r)
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},7500);
                                         
                                         var cb_par = document.getElementById("parietal-lobe");
-                                        var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
+                                        var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 	 		     		spritey1.position.set(-2,2,2);
 	 		     
                                         setTimeout(function() {cb_par.play()}, 14500);
@@ -391,7 +389,7 @@ function roundRect(ctx, x, y, w, h, r)
                                         setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0.8,0,0.2)},14400);
                       
                                         var cb_cer = document.getElementById("cerebellum");
-                                         var spritey2 = makeTextSprite( " Cerebellum ", { fontsize: 10, borderColor: {r:0, g:255, b:0, a:1.0}, backgroundColor: {r:0, g:255, b:100, a:0.8} } );
+                                         var spritey2 = makeTextSprite( " Cerebellum ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0, a:1.0} } );
 	 				 spritey2.position.set(-2,-2,2);
 	                     
                                         setTimeout(function(){cb_cer.play()}, 22000);
