@@ -365,7 +365,7 @@ function roundRect(ctx, x, y, w, h, r)
                                         intro.play();
                                         
                                         var cb_occ = document.getElementById("occipital-lobe");
-                                        var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+                                        var spritey = makeTextSprite( " Occipital Lobe ~ visual processing ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey.position.set(-2,-1,2);
 	                     		
                                         setTimeout(function() {cb_occ.play()}, 7700);
@@ -376,7 +376,7 @@ function roundRect(ctx, x, y, w, h, r)
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},7500);
                                         
                                         var cb_par = document.getElementById("parietal-lobe");
-                                        var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
+                                        var spritey1 = makeTextSprite( " Parietal Lobe ~ motor control ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 	 		     		spritey1.position.set(-2,2,2);
 	 		     
                                         setTimeout(function() {cb_par.play()}, 14500);
@@ -387,7 +387,7 @@ function roundRect(ctx, x, y, w, h, r)
                                         setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0.8,0,0.2)},14400);
                       
                                         var cb_cer = document.getElementById("cerebellum");
-                                         var spritey2 = makeTextSprite( " Cerebellum ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0, a:1.0} } );
+                                         var spritey2 = makeTextSprite( " Cerebellum ~ hand-eye coordination", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0, a:1.0} } );
 	 				 spritey2.position.set(-2,-2,2);
 	                     
                                         setTimeout(function(){cb_cer.play()}, 22000);
@@ -396,7 +396,7 @@ function roundRect(ctx, x, y, w, h, r)
                                         setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 21900);
                       
                                         var cb_fro = document.getElementById("frontal-lobe");
-                                         var spritey3 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
+                                         var spritey3 = makeTextSprite( " Frontal Lobe ~ decision-making ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
 	                     		spritey3.position.set(2,2,2);
 
                                         setTimeout(function() {cb_fro.play()}, 30000)
