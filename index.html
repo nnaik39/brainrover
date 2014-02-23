@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +23,30 @@
                 <script src="js/jquery.js"></script>
                 <script src="https://raw.github.com/sole/tween.js/master/build/tween.min.js"></script>
                     <style>
-
+#navbar ul { 
+	margin: 0; 
+	padding: 5px; 
+	list-style-type: none; 
+	text-align: center; 
+	background-color: #000; 
+	} 
+ 
+#navbar ul li {  
+	display: inline; 
+	} 
+ 
+#navbar ul li a { 
+	text-decoration: none; 
+	padding: .2em 1em; 
+	color: #fff; 
+	background-color: #000; 
+	} 
+ 
+#navbar ul li a:hover { 
+	color: #000; 
+	background-color: #fff; 
+	} 
+ 
     			.spinner {
       					margin: 100px auto;
       					width: 50px;
@@ -84,15 +108,15 @@
     <div id="wrapper">
       
       <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li class="sidebar-brand" style="color: #000000"><a href="index.html">Home</a></li>
-          <li style="color: #000000"><a href="#">Explore</a></li>
-          <li style="color: #000000"><a href="motorfunction.html">What Happens When...?</a></li>
-          <li style="color: #000000"><a href="#">Help</a></li>
-          <li style="color: #000000"><a href="#">About</a></li>
-        </ul>
-      </div>
+<div id="navbar"> 
+  <ul> 
+	<li><a href="index.html">Home</a></li> 
+	<li><a href="#">LinkHere</a></li> 
+	<li><a href="#">LinkHere</a></li> 
+	<li><a href="#">LinkHere</a></li> 
+	<li><a href="#">LinkHere</a></li> 
+  </ul> 
+</div> 
           
       <!-- Page content -->
       <div id="page-content-wrapper">
