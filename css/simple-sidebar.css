@@ -1,13 +1,10 @@
 #wrapper {
-  padding-left: 250px;
   transition: all 0.4s ease 0s;
 }
 
 #sidebar-wrapper {
-  margin-left: -250px;
-  left: 250px;
   width: 250px;
-  background: #000;
+  background: rgba(0, 0, 0, 0.2);
   position: fixed;
   height: 100%;
   overflow-y: auto;
