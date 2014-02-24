@@ -322,11 +322,11 @@
         			// border color
         			context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + "," + borderColor.b + "," + borderColor.a + ")";
 
-        context.lineWidth = borderThickness;
-        roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
-        // 1.4 is extra height factor for text below baseline: g,j,p,q.
+        			context.lineWidth = borderThickness;
+        			roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
+        			// 1.4 is extra height factor for text below baseline: g,j,p,q.
         
-        // text color
+				// text color
         context.fillStyle = "rgba(0, 0, 0, 1.0)";
 
         context.fillText( message, borderThickness, fontsize + borderThickness);
@@ -386,56 +386,10 @@ function roundRect(ctx, x, y, w, h, r)
 
                                           break; //reset
                                         
-                                        var intro = document.getElementById("intro");
-                                        intro.play();
-                                        
-                                        var cb_occ = document.getElementById("occipital-lobe");
-                                        var spritey = makeTextSprite( " Occipital Lobe ~ visual processing ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
-	                     		spritey.position.set(-2,-1,2);
-	                     		
-                                        setTimeout(function() {cb_occ.play()}, 7700);
-                                        setTimeout(function() {scene.add( spritey ) }, 7500);
-                                        setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
-                                        setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1)},7500);
-                                        setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(1,0,1)},7500);
-                                        setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},7500);
-                                        
-                                        var cb_par = document.getElementById("parietal-lobe");
-                                        var spritey1 = makeTextSprite( " Parietal Lobe ~ motor control ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
-	 		     		spritey1.position.set(-2,2,2);
-	 		     
-                                        setTimeout(function() {cb_par.play()}, 14500);
-                                        setTimeout(function() {scene.add( spritey1 )}, 14400);
-                                        setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0.8,0,0.2)},14400);
-                                        setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(0.8,0,0.2)},14400);
-                                        setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0.8,0,0.2)},14400);
-                                        setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0.8,0,0.2)},14400);
-                      
-                                        var cb_cer = document.getElementById("cerebellum");
-                                         var spritey2 = makeTextSprite( " Cerebellum ~ hand-eye coordination", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0, a:1.0} } );
-	 				 spritey2.position.set(-2,-2,2);
-	                     
-                                        setTimeout(function(){cb_cer.play()}, 22000);
-                                        setTimeout(function(){scene.add( spritey2 )}, 21900);
-                                        setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0,0.3,0.7)}, 21900);
-                                        setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 21900);
-                      
-                                        var cb_fro = document.getElementById("frontal-lobe");
-                                         var spritey3 = makeTextSprite( " Frontal Lobe ~ decision-making ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
-	                     		spritey3.position.set(2,2,2);
-
-                                        setTimeout(function() {cb_fro.play()}, 30000)
-                                        setTimeout(function() {scene.add( spritey3 )}, 29721)
-                                        setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
-                                        setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
-                                        setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
-                                        setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
-                      break;
-                      
+                                       
                       			case 69: 
                       				var introl = document.getElementById("introl");
                       				introl.play();
-                      				//finish this up later
                       				//step 1: left side of cerebral cortex
                       				var l_2 = document.getElementById("l-2");
                       				setTimeout(function() {l_2.play()}, 5000);
@@ -444,15 +398,17 @@ function roundRect(ctx, x, y, w, h, r)
                       				setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1)}, 5000);
                       				setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 5000);//occipital
                       				setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(1,1,1)}, 5000);
-                      				//frontal
+                      	
                       				setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(1,1,1)}, 5000);
                       				
                       				setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(1,1,1)}, 5000);
                       				setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,1,1)}, 5000); //parietal
-  setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(1,1,1)}, 5000);
+  						setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(1,1,1)}, 5000);
                       				//step 2: frontal lobe
-                      				dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(1,1,1);
-						dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(1,1,1);
+                      				var l_3 = document.getElementById("l-3");
+                      				setTimeout(function() {l_3.play()}, 9500)
+                      				setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(1,1,1)}, 9400);
+						setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(1,1,1)}, 9400);
 						//step 3: right side of cerebral cortex
 						dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1); //temporal
                       				dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1); //occipital
@@ -665,6 +621,11 @@ function roundRect(ctx, x, y, w, h, r)
    <audio hidden id="l-2">
   	<source src="audio/l2.ogg" type="audio/ogg"/>
   	<source src="audio/l2.mp3" type="audio/mpeg"/>
+		Your browser does not support the audio element.
+   </audio>
+    <audio hidden id="l-3">
+  	<source src="audio/l3.ogg" type="audio/ogg"/>
+  	<source src="audio/l3.mp3" type="audio/mpeg"/>
 		Your browser does not support the audio element.
    </audio>
 
