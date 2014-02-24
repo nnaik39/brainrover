@@ -346,22 +346,22 @@
 }
 
 // function for drawing rounded rectangles
-function roundRect(ctx, x, y, w, h, r) 
-{
-    ctx.beginPath();
-    ctx.moveTo(x+r, y);
-    ctx.lineTo(x+w-r, y);
-    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-    ctx.lineTo(x+w, y+h-r);
-    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-    ctx.lineTo(x+r, y+h);
-    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-    ctx.lineTo(x, y+r);
-    ctx.quadraticCurveTo(x, y, x+r, y);
-    ctx.closePath();
-    ctx.fill();
-        ctx.stroke();   
-}
+	function roundRect(ctx, x, y, w, h, r) 
+	{
+    		ctx.beginPath();
+    		ctx.moveTo(x+r, y);
+    		ctx.lineTo(x+w-r, y);
+    		ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+    		ctx.lineTo(x+w, y+h-r);
+    		ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+    		ctx.lineTo(x+r, y+h);
+    		ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+    		ctx.lineTo(x, y+r);
+    		ctx.quadraticCurveTo(x, y, x+r, y);
+    		ctx.closePath();
+    		ctx.fill();
+        	ctx.stroke();   
+	}
 
 
                         function onWindowResize() {
@@ -410,10 +410,16 @@ function roundRect(ctx, x, y, w, h, r)
 						setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.8,0.2)}, 15000);
 						setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.8,0.2)}, 15000);
 						//step 3: right side of cerebral cortex
-						//dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1); //temporal
-                      				//dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1); //occipital
-                      				 //dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(1,1,1); //frontal
-                      				//dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,1); //parietal
+						var l_4 = document.getElemenetById("l-4");
+						setTimeout(function() {l_4.play()}, 25000)
+						setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.color.setRGB(0,0.3,0.7)}, 25000); //temporal
+                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0,0.3,0.7)}, 25000); //occipital
+                      				setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 25000); //frontal
+                      				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 25000); //parietal
+                      				setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.smbient.setRGB(0,0.3,0.7)}, 25000); //temporal
+                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0,0.3,0.7)}, 25000); //occipital
+                      				setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.3,0.7)}, 25000); //frontal
+                      				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.3,0.7)}, 25000); //parietal
                       				//step 4: occipital lobe
                       				//dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1);
                       				//dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1);
@@ -628,6 +634,10 @@ function roundRect(ctx, x, y, w, h, r)
   	<source src="audio/l3.mp3" type="audio/mpeg"/>
 		Your browser does not support the audio element.
    </audio>
-
+   <audio hidden id="l-4">
+  	<source src="audio/l4.ogg" type="audio/ogg"/>
+  	<source src="audio/l4.mp3" type="audio/mpeg"/>
+		Your browser does not support the audio element.
+   </audio>
   </body>
 </html>
