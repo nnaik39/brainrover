@@ -88,18 +88,18 @@
 	background-color: #000; 
 	} 
  
-	#navbar ul li {  
+#navbar ul li {  
 	display: inline; 
 	} 
  
-	#navbar ul li a { 
+#navbar ul li a { 
 	text-decoration: none; 
 	padding: .2em 1em; 
 	color: #fff; 
 	background-color: #000; 
 	} 
  
-	#navbar ul li a:hover { 
+#navbar ul li a:hover { 
 	color: #000; 
 	background-color: #fff; 
 	} 
@@ -116,9 +116,9 @@
       <!-- Sidebar -->
      <div id="navbar"> 
   	<ul> 
-	<li><a href="index.html">Home</a></li> 
+	<li><a href="#">Home</a></li> 
 	<li><a href="#">Explore</a></li> 
-	<li><a href="motorfunction.html">What Happens When...?</a></li> 
+	<li><a href="#">What Happens When...?</a></li> 
 	<li><a href="#">Help</a></li> 
 	<li><a href="#">About</a></li> 
   </ul> 
@@ -346,22 +346,22 @@
 }
 
 // function for drawing rounded rectangles
-	function roundRect(ctx, x, y, w, h, r) 
-	{
-    		ctx.beginPath();
-    		ctx.moveTo(x+r, y);
-    		ctx.lineTo(x+w-r, y);
-    		ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-    		ctx.lineTo(x+w, y+h-r);
-    		ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-    		ctx.lineTo(x+r, y+h);
-    		ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-    		ctx.lineTo(x, y+r);
-    		ctx.quadraticCurveTo(x, y, x+r, y);
-    		ctx.closePath();
-    		ctx.fill();
-        	ctx.stroke();   
-	}
+function roundRect(ctx, x, y, w, h, r) 
+{
+    ctx.beginPath();
+    ctx.moveTo(x+r, y);
+    ctx.lineTo(x+w-r, y);
+    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+    ctx.lineTo(x+w, y+h-r);
+    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+    ctx.lineTo(x+r, y+h);
+    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+    ctx.lineTo(x, y+r);
+    ctx.quadraticCurveTo(x, y, x+r, y);
+    ctx.closePath();
+    ctx.fill();
+        ctx.stroke();   
+}
 
 
                         function onWindowResize() {
@@ -410,16 +410,10 @@
 						setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.8,0.2)}, 15000);
 						setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.8,0.2)}, 15000);
 						//step 3: right side of cerebral cortex
-						var l_4 = document.getElementById("l-4");
-						setTimeout(function() {l_4.play()}, 17\9000)
-						setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.color.setRGB(0,0.3,0.7)}, 19000); //temporal
-                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0,0.3,0.7)}, 19000); //occipital
-                      				setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 19000); //frontal
-                      				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 19000); //parietal
-                      				setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.smbient.setRGB(0,0.3,0.7)}, 19000); //temporal
-                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0,0.3,0.7)}, 19000); //occipital
-                      				setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.3,0.7)}, 19000); //frontal
-                      				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.3,0.7)}, 19000); //parietal
+						//dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1); //temporal
+                      				//dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1); //occipital
+                      				 //dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(1,1,1); //frontal
+                      				//dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,1); //parietal
                       				//step 4: occipital lobe
                       				//dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1);
                       				//dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1);
@@ -634,10 +628,6 @@
   	<source src="audio/l3.mp3" type="audio/mpeg"/>
 		Your browser does not support the audio element.
    </audio>
-   <audio hidden id="l-4">
-  	<source src="audio/l4.ogg" type="audio/ogg"/>
-  	<source src="audio/l4.mp3" type="audio/mpeg"/>
-		Your browser does not support the audio element.
-   </audio>
+
   </body>
 </html>
