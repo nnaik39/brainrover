@@ -404,14 +404,14 @@ function roundRect(ctx, x, y, w, h, r)
   						setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(1,0,1)}, 5400);
                       				//step 2: frontal lobe
                       				var l_3 = document.getElementById("l-3");
-                      				setTimeout(function() {l_3.play()}, 15000);
+                      				setTimeout(function() {l_3.play()}, 15400);
                       				setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.8,0.2)}, 15500);
                       				setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.8,0.2)}, 15500);
 						setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.8,0.2)}, 15500);
 						setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.8,0.2)}, 15500);
 						//step 3: right side of cerebral cortex
 						var l_4 = document.getElementById("l-4");
-						setTimeout(function() {l_4.play()}, 19000)
+						setTimeout(function() {l_4.play()}, 19000);
 						setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.color.setRGB(0,0.2,0.8)}, 19000); //temporal
                       				setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(0,0.2,0.8)}, 19000);
                       				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0,0.2,0.8)}, 19000);
@@ -422,14 +422,18 @@ function roundRect(ctx, x, y, w, h, r)
                       				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.2,0.8)}, 19000);
                       				//step 4: occipital lobe
                       				var l_5 = document.getElementById("l-5");
-                      				setTimeout(function() {l_5.play()}, 25000)
-                      				setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.3,0.7,0)}, 25000);
-                      				setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.3,0.7,0)}, 25000);
-                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.3,0.7,0)}, 25000);
-                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.3,0.7,0)}, 25000);
+                      				setTimeout(function() {l_5.play()}, 25300);
+                      				setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.3,0.7,0)}, 25300);
+                      				setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.3,0.7,0)}, 25300);
+                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.3,0.7,0)}, 25300);
+                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.3,0.7,0)}, 25300);
                       				//step 5: parietal lobe
-                      				//dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,1,1);
-                      				//dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,1);
+                      				var l_6 = document.getElementById("l-6");
+                      				setTimeout(function() {l_6.play()}, 29000);
+                      				setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,1,0)}, 29000);
+                      				setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(1,1,0)}, 29000);
+                      				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,0)}, 29000);
+                      				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(1,1,0)}, 29000);
                       
                             }
                         }
@@ -643,9 +647,14 @@ function roundRect(ctx, x, y, w, h, r)
   		<source src="audio/l4.mp3" type="audio/mpeg"/>
 			Your browser does not support the audio element.
    	</audio>
-   		<audio hidden id="l-5">
+   	<audio hidden id="l-5">
   		<source src="audio/l5.ogg" type="audio/ogg"/>
   		<source src="audio/l5.mp3" type="audio/mpeg"/>
+			Your browser does not support the audio element.
+   	</audio>
+   	<audio hidden id="l-6">
+  		<source src="audio/l6.ogg" type="audio/ogg"/>
+  		<source src="audio/l6.mp3" type="audio/mpeg"/>
 			Your browser does not support the audio element.
    	</audio>
 
