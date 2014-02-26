@@ -395,7 +395,9 @@
                       				//step 1: left side of cerebral cortex
                       				var spritey4 = makeTextSprite( " Left Cerebral Cortex ~ structure of joke ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 	 		     			spritey4.position.set(-2,2,-2);
-	 
+	 					
+	 					console.log("Ha! Ha! Ha...not funny.");
+	 					
                       				var l_2 = document.getElementById("l-2");
                       				setTimeout(function() {scene.add(spritey4)}, 5400);
                       				setTimeout(function() {l_2.play()}, 5400);
@@ -456,7 +458,7 @@
                       }
                       
                       function clear() {
-                      				console.log("Are they gone yet?")
+                      				console.log("Are they gone yet?");
                       				scene.remove(spritey1);
                         			scene.remove(spritey2);
                         			scene.remove(spritey3);
@@ -471,6 +473,8 @@
                         function catchingball() {
                         	var intro = document.getElementById("intro");
                                         intro.play();
+                                        
+                                        console.log("Baseball!")
                                         
                                         var cb_occ = document.getElementById("occipital-lobe");
                                         var spritey = makeTextSprite( " Occipital Lobe ~ visual processing ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
