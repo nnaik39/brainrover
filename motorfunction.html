@@ -80,29 +80,29 @@
     					}
     </style>
     <style type="text/css">
-    	 	#navbar ul { 
-				margin: 0; 
-				padding: 5px; 
-				list-style-type: none; 
-				text-align: center; 
-				background-color: #000; 
-				} 
+    	 			#navbar ul { 
+						margin: 0; 
+						padding: 5px; 
+						list-style-type: none; 
+						text-align: center; 
+						background-color: #000; 
+						} 
  
-		#navbar ul li {  
-				display: inline; 
-				} 
+				#navbar ul li {  
+						display: inline; 
+						} 
  
-		#navbar ul li a { 
-					text-decoration: none; 
-					padding: .2em 1em; 
-					color: #fff; 
-					background-color: #000; 
-	} 
+				#navbar ul li a { 
+							text-decoration: none; 
+							padding: .2em 1em; 
+							color: #fff; 
+							background-color: #000; 
+						} 
  
-#navbar ul li a:hover { 
-	color: #000; 
-	background-color: #fff; 
-	} 
+				#navbar ul li a:hover { 
+							color: #000; 
+							background-color: #fff; 
+							} 
  
     	
     </style>
@@ -327,23 +327,23 @@
         			// 1.4 is extra height factor for text below baseline: g,j,p,q.
         
 				// text color
-        context.fillStyle = "rgba(0, 0, 0, 1.0)";
+        			context.fillStyle = "rgba(0, 0, 0, 1.0)";
 
-        context.fillText( message, borderThickness, fontsize + borderThickness);
+        			context.fillText( message, borderThickness, fontsize + borderThickness);
         
-        // canvas contents will be used for a texture
-        var texture = new THREE.Texture(canvas) 
-        texture.needsUpdate = true;
+        			// canvas contents will be used for a texture
+        			var texture = new THREE.Texture(canvas) 
+        			texture.needsUpdate = true;
 
-        var spriteMaterial = new THREE.SpriteMaterial( 
-                { map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
-        var sprite = new THREE.Sprite( spriteMaterial );
+        			var spriteMaterial = new THREE.SpriteMaterial( 
+                			{ map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
+        			var sprite = new THREE.Sprite( spriteMaterial );
    
-        sprite.scale.set(10,5,1.0);
-   // was     sprite.scale.set(100,50,1.0);
+        			sprite.scale.set(10,5,1.0);
+   				// was     sprite.scale.set(100,50,1.0);
    
-        return sprite;  
-}
+        			return sprite;  
+		}
 
 // function for drawing rounded rectangles
 	function roundRect(ctx, x, y, w, h, r) 
@@ -454,6 +454,19 @@
                       				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,0)}, 30000);
                       				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(1,1,0)}, 30000);
                       }
+                      
+                      function clear() {
+                      	scene.remove(spritey1);
+                        scene.remove(spritey2);
+                        scene.remove(spritey3);
+                        scene.remove(spritey4);
+                        scene.remove(spritey5);
+                        scene.remove(spritey6);
+                        scene.remove(spritey7);
+                        scene.remove(spritey8);
+                        setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
+                        
+                      }
                         function catchingball() {
                         	var intro = document.getElementById("intro");
                                         intro.play();
@@ -560,7 +573,7 @@
                 </script>
                 <p class="lead" style="top-margin:70px">Select an activity below to find out how the brain is involved.
 			<div class="btn-group">
-  				<button type="button" class="btn btn-default">Clear</button>
+  				<button type="button" class="btn btn-default"><a href="javascript:clear()">Clear</a></button>
   				<button type="button" class="btn btn-default"><a href="javascript:catchingball()">Catching a Baseball</a></button>
 				<button type="button" class="btn btn-default"><a href="javascript:laughter()">Laughing</a></button>
   			
