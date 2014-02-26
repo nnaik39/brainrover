@@ -456,15 +456,16 @@
                       }
                       
                       function clear() {
-                      	scene.remove(spritey1);
-                        scene.remove(spritey2);
-                        scene.remove(spritey3);
-                        scene.remove(spritey4);
-                        scene.remove(spritey5);
-                        scene.remove(spritey6);
-                        scene.remove(spritey7);
-                        scene.remove(spritey8);
-                        setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
+                      				console.log("Are they gone yet?")
+                      				scene.remove(spritey1);
+                        			scene.remove(spritey2);
+                        			scene.remove(spritey3);
+                        			scene.remove(spritey4);
+                        			scene.remove(spritey5);
+                        			scene.remove(spritey6);
+                        			scene.remove(spritey7);
+                        			scene.remove(spritey8);
+                        			setMaterial(dae, new THREE.MeshPhongMaterial({color: 0xff0000}));
                         
                       }
                         function catchingball() {
