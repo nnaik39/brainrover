@@ -295,23 +295,23 @@
 	                     		dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6);
 	                     		dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6);
 	                     		
-	   var spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
-              spritey4.position.set(2, -1, -2);
-              scene.add( spritey4 );
-              var spritey5 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
-              spritey5.position.set(2, -1, 2);
-              scene.add( spritey5 );
+	   	var spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
+              				spritey4.position.set(2, -1, -2);
+              				scene.add( spritey4 );
+              				var spritey5 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
+              				spritey5.position.set(2, -1, 2);
+              				scene.add( spritey5 );
               
-              dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1);
-              dae.children[0].children[0].children[11].children[0].material.ambient.setRGB(1,0,1);
-	      dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1);
-	      dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(1,0,1);
+              				dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1);
+              				dae.children[0].children[0].children[11].children[0].material.ambient.setRGB(1,0,1);
+					dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1);
+	      				dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(1,0,1);
 
-	   var spritey9 = makeTextSprite( " Pituitary ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0} } );
-              spritey9.position.set(2, -1, 0);
-              scene.add( spritey9 );
-              dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1);
-              dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1);
+	       var spritey9 = makeTextSprite( " Pituitary ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0} } );
+              				spritey9.position.set(2, -1, 0);
+              				scene.add( spritey9 );
+              				dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1);
+              				dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1);
 
 // middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
 // cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
@@ -338,82 +338,82 @@
 
                         }
 
-function makeTextSprite( message, parameters )
-{
-        if ( parameters === undefined ) parameters = {};
+			function makeTextSprite( message, parameters )
+			{
+        			if ( parameters === undefined ) parameters = {};
         
-        var fontface = parameters.hasOwnProperty("fontface") ? 
-                parameters["fontface"] : "Arial";
+        			var fontface = parameters.hasOwnProperty("fontface") ? 
+                			parameters["fontface"] : "Arial";
         
-        var fontsize = parameters.hasOwnProperty("fontsize") ? 
-                parameters["fontsize"] : 288;
+        			var fontsize = parameters.hasOwnProperty("fontsize") ? 
+                			parameters["fontsize"] : 288;
         
-        var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
-                parameters["borderThickness"] : 1;
+        			var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
+                			parameters["borderThickness"] : 1;
         
-        var borderColor = parameters.hasOwnProperty("borderColor") ?
-                parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
+        			var borderColor = parameters.hasOwnProperty("borderColor") ?
+                			parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
         
-        var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
-                parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
+        			var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
+                			parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
 
-        var spriteAlignment = THREE.SpriteAlignment.topLeft;
+        			var spriteAlignment = THREE.SpriteAlignment.topLeft;
                 
-        var canvas = document.createElement('canvas');
-        var context = canvas.getContext('2d');
-        context.font = "Bold " + fontsize + "px " + fontface;
+        			var canvas = document.createElement('canvas');
+        			var context = canvas.getContext('2d');
+        				context.font = "Bold " + fontsize + "px " + fontface;
     
-        // get size data (height depends only on font size)
-        var metrics = context.measureText( message );
-        var textWidth = metrics.width;
+        			// get size data (height depends only on font size)
+        			var metrics = context.measureText( message );
+        			var textWidth = metrics.width;
         
-        // background color
-        context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
+        			// background color
+        			context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
                                                                   + backgroundColor.b + "," + backgroundColor.a + ")";
-        // border color
-        context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
+        			// border color
+        			context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
                                                                   + borderColor.b + "," + borderColor.a + ")";
 
-        context.lineWidth = borderThickness;
-        roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
-        // 1.4 is extra height factor for text below baseline: g,j,p,q.
+        			context.lineWidth = borderThickness;
+        			roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
+        			// 1.4 is extra height factor for text below baseline: g,j,p,q.
         
-        // text color
-        context.fillStyle = "rgba(0, 0, 0, 1.0)";
+        			// text color
+        			context.fillStyle = "rgba(0, 0, 0, 1.0)";
 
-        context.fillText( message, borderThickness, fontsize + borderThickness);
+        			context.fillText( message, borderThickness, fontsize + borderThickness);
         
-        // canvas contents will be used for a texture
-        var texture = new THREE.Texture(canvas) 
-        texture.needsUpdate = true;
+        			// canvas contents will be used for a texture
+        			var texture = new THREE.Texture(canvas) 
+        			texture.needsUpdate = true;
 
-        var spriteMaterial = new THREE.SpriteMaterial( 
-                { map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
-        var sprite = new THREE.Sprite( spriteMaterial );
+        			var spriteMaterial = new THREE.SpriteMaterial( 
+                			{ map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
+        			var sprite = new THREE.Sprite( spriteMaterial );
    
-        sprite.scale.set(10,5,1.0);
-   // was     sprite.scale.set(100,50,1.0);
+        			sprite.scale.set(10,5,1.0);
+   				// was     sprite.scale.set(100,50,1.0);
    
-        return sprite;  
-}
+        		return sprite;  
+		}
 
-// function for drawing rounded rectangles
-function roundRect(ctx, x, y, w, h, r) 
-{
-    ctx.beginPath();
-    ctx.moveTo(x+r, y);
-    ctx.lineTo(x+w-r, y);
-    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-    ctx.lineTo(x+w, y+h-r);
-    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-    ctx.lineTo(x+r, y+h);
-    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-    ctx.lineTo(x, y+r);
-    ctx.quadraticCurveTo(x, y, x+r, y);
-    ctx.closePath();
-    ctx.fill();
-        ctx.stroke();   
-}
+		// function for drawing rounded rectangles
+		function roundRect(ctx, x, y, w, h, r) 
+		{
+    			ctx.beginPath();
+    			ctx.moveTo(x+r, y);
+    			ctx.lineTo(x+w-r, y);
+    			ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+    			ctx.lineTo(x+w, y+h-r);
+    			ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+    			ctx.lineTo(x+r, y+h);
+    			ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+    			ctx.lineTo(x, y+r);
+    			ctx.quadraticCurveTo(x, y, x+r, y);
+    			ctx.closePath();
+    			ctx.fill();
+        		ctx.stroke();   
+		}
 
 
                     
