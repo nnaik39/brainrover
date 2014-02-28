@@ -24,7 +24,7 @@
                 <script src="js/jquery.js"></script>
                 <script src="js/jquery-ui.js"></script>
 
-                <script src="js/Tween.js"></script>
+                <script src="https://raw.github.com/sole/tween.js/master/build/tween.min.js"></script>
                     <style>
     			.spinner {
 				    margin: 100px auto;
@@ -145,6 +145,7 @@
             </div>
             <script>
 //initialize tween here
+                        var tween;
                         var controls;
                         var theDiv;
 
@@ -157,18 +158,6 @@
                         var x = 0;
                         var y = 0;
                         var z = 0;
-
-                        //added for tween example
-                        var tween;
-                        var startTime = Date.now();
-                        var position = { x : 0, y: 0 };
-                        var target = { x : 0, y: 10 };
-                        var position2 = { x : 0, y: 10 };
-                        var tween = new TWEEN.Tween(position).to(target, 2000);
-                        //added for tween example
-
-                        var target2 = { x : 10, y: 10 };
-                        var tween2 = new TWEEN.Tween(position2).to(target2, 2000);
 
                         var loader = new THREE.ColladaLoader();
                         loader.options.convertUpAxis = false;
@@ -192,6 +181,7 @@
                                 camera.position.set( 10, 2, 3 );
 
 
+                                
 
                                 scene = new THREE.Scene();
 
@@ -255,6 +245,7 @@
 
                                setMaterial(dae);
 
+                                       
 // middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
 // cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
 // pituitary: dae.children[0].children[0].children[2].children[0].material.color.setRGB(1,1,1) 
@@ -293,64 +284,49 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
                                 window.addEventListener( 'resize', onWindowResize, false );
 
-                                tween.onUpdate(function(){
-                                      camera.position.x = position.x;
-                                      camera.position.y = position.y;
-                                });
-                                tween2.onUpdate(function(){
-                                      camera.position.x = position2.x;
-                                      camera.position.y = position2.y;
-                                });
-
-                                tween.easing(TWEEN.Easing.Elastic.InOut);
-                                tween2.easing(TWEEN.Easing.Elastic.InOut);
-
-                                tween.start();
-
                         } // end of init
 
  
-	function makeTextSprite( message, parameters )
+		function makeTextSprite( message, parameters )
 			{
         			if ( parameters === undefined ) parameters = {};
         
         			var fontface = parameters.hasOwnProperty("fontface") ? 
-                			parameters["fontface"] : "Arial";
+                		parameters["fontface"] : "Arial";
         
         			var fontsize = parameters.hasOwnProperty("fontsize") ? 
-                			parameters["fontsize"] : 288;
+                		parameters["fontsize"] : 288;
         
         			var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
-                			parameters["borderThickness"] : 1;
+                		parameters["borderThickness"] : 1;
         
         			var borderColor = parameters.hasOwnProperty("borderColor") ?
-                			parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
+                		parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
         
         			var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
-                			parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
+                		parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
 
         			var spriteAlignment = THREE.SpriteAlignment.topLeft;
                 
         			var canvas = document.createElement('canvas');
         			var context = canvas.getContext('2d');
-        				context.font = "Bold " + fontsize + "px " + fontface;
+        			context.font = "Bold " + fontsize + "px " + fontface;
     
         			// get size data (height depends only on font size)
         			var metrics = context.measureText( message );
         			var textWidth = metrics.width;
         
         			// background color
-        			context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
-                                                                  + backgroundColor.b + "," + backgroundColor.a + ")";
+        			context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + "," + backgroundColor.b + "," + backgroundColor.a + ")";
+        			
         			// border color
-        			context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
-                                                                  + borderColor.b + "," + borderColor.a + ")";
+        			context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + "," + borderColor.b + "," + borderColor.a + ")";
 
         			context.lineWidth = borderThickness;
         			roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
         			// 1.4 is extra height factor for text below baseline: g,j,p,q.
         
-        			// text color
+				// text color
         			context.fillStyle = "rgba(0, 0, 0, 1.0)";
 
         			context.fillText( message, borderThickness, fontsize + borderThickness);
@@ -366,10 +342,11 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
         			sprite.scale.set(10,5,1.0);
    				// was     sprite.scale.set(100,50,1.0);
    
-        		return sprite;  
+        			return sprite;  
 		}
+
 // function for drawing rounded rectangles
-	function roundRect(ctx, x, y, w, h, r)
+	function roundRect(ctx, x, y, w, h, r) 
 		{
     			ctx.beginPath();
     			ctx.moveTo(x+r, y);
@@ -383,28 +360,8 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
     			ctx.quadraticCurveTo(x, y, x+r, y);
     			ctx.closePath();
     			ctx.fill();
-        		ctx.stroke();
+        		ctx.stroke();   
 		}
-
-
-
-// function for drawing rounded rectangles
-function roundRect(ctx, x, y, w, h, r) 
-{
-    ctx.beginPath();
-    ctx.moveTo(x+r, y);
-    ctx.lineTo(x+w-r, y);
-    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-    ctx.lineTo(x+w, y+h-r);
-    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-    ctx.lineTo(x+r, y+h);
-    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-    ctx.lineTo(x, y+r);
-    ctx.quadraticCurveTo(x, y, x+r, y);
-    ctx.closePath();
-    ctx.fill();
-        ctx.stroke();   
-}
 
 
                         function onWindowResize() {
@@ -420,7 +377,7 @@ function roundRect(ctx, x, y, w, h, r)
                         {
                                 switch ( event.keyCode) 
                                 {
-                                        case 68: x += 0.1; break; //right
+                                        case 68: x += 0.1; break ; //right
                                         case 65: x -= 0.1; break ; //left
                                         case 87: z += 0.1; break ; //left
                                         case 83: z -= 0.1; break ; //right
@@ -558,8 +515,6 @@ function roundRect(ctx, x, y, w, h, r)
                                         setTimeout(function() {cb_occ.play()}, 7700);
                                         setTimeout(function() {scene.add( spritey ) }, 7500);
                                         setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
-                                        
-                                        setTimeout(function() {tween2.start(); dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
                                         setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1)},7500);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(1,0,1)},7500);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},7500);
@@ -633,11 +588,6 @@ function roundRect(ctx, x, y, w, h, r)
                                 }
 
                                 controls.update();
-
-                                //added for tween example
-                                TWEEN.update();
-                                //added for tween example
-
                                 render();
 
                         }
@@ -766,5 +716,6 @@ function roundRect(ctx, x, y, w, h, r)
   		<source src="audio/l6.mp3" type="audio/mpeg"/>
 			Your browser does not support the audio element.
    	</audio>
+
   </body>
 </html>
