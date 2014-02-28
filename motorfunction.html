@@ -23,6 +23,7 @@
                 <script src="js/OrbitControls.js"></script>
                 <script src="js/jquery.js"></script>
                 <script src="js/jquery-ui.js"></script>
+                <script src="js/THREEx.FullScreen.js"></script>
 
                 <script src="js/Tween.js"></script>
                     <style>
@@ -144,7 +145,10 @@
               <div class="rect5"></div>
             </div>
             <script>
+
 //initialize tween here
+                        var theDiv;
+
                         var tween;
                         var controls;
                         var theDiv;
@@ -287,7 +291,7 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 
 //////////////////////////////
 
-                                var theDiv = document.getElementById("Foo");
+                                theDiv = document.getElementById("Foo");
                                 theDiv.appendChild( renderer.domElement );
                                 $( ".spinner" ).remove();
 
@@ -418,11 +422,18 @@ function roundRect(ctx, x, y, w, h, r)
 
                         }
 
-                        function onDocumentKeyDown(event) 
+                        function onDocumentKeyDown(event)
                         {
-                                switch ( event.keyCode) 
+                                switch ( event.keyCode)
                                 {
-                                        case 68: x += 0.1; break ; //right
+                                        case 68:
+
+                                          if( THREEx.FullScreen.activated() ){
+                                            THREEx.FullScreen.cancel();
+                                          }else{
+                                            THREEx.FullScreen.request(theDiv);
+                                          }; break ; //right
+
                                         case 65: x -= 0.1; break ; //left
                                         case 87: z += 0.1; break ; //left
                                         case 83: z -= 0.1; break ; //right
@@ -430,11 +441,8 @@ function roundRect(ctx, x, y, w, h, r)
                                           setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
 
                                           break; //reset
-                                        
-                                       
                             }
                         }
-                        
                         function laughter() {	var introl = document.getElementById("introl");
                       				introl.play();
                       				//step 1: left side of cerebral cortex
