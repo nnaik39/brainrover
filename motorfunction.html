@@ -318,7 +318,7 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                 		parameters["fontface"] : "Arial";
         
         			var fontsize = parameters.hasOwnProperty("fontsize") ? 
-                		parameters["fontsize"] : 288;
+                		parameters["fontsize"] : 50;
         
         			var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
                 		parameters["borderThickness"] : 1;
@@ -365,11 +365,11 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
         			sprite.scale.set(10,5,1.0);
    				// was     sprite.scale.set(100,50,1.0);
    
-        			return sprite;  
+        			return sprite;
 		}
 
 // function for drawing rounded rectangles
-	function roundRect(ctx, x, y, w, h, r) 
+	function roundRect(ctx, x, y, w, h, r)
 		{
     			ctx.beginPath();
     			ctx.moveTo(x+r, y);
@@ -383,7 +383,7 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
     			ctx.quadraticCurveTo(x, y, x+r, y);
     			ctx.closePath();
     			ctx.fill();
-        		ctx.stroke();   
+        		ctx.stroke();
 		}
 
 
