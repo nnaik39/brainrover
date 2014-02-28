@@ -346,22 +346,22 @@
 		}
 
 // function for drawing rounded rectangles
-	function roundRect(ctx, x, y, w, h, r) 
-		{
-    			ctx.beginPath();
-    			ctx.moveTo(x+r, y);
-    			ctx.lineTo(x+w-r, y);
-    			ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-    			ctx.lineTo(x+w, y+h-r);
-    			ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-    			ctx.lineTo(x+r, y+h);
-    			ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-    			ctx.lineTo(x, y+r);
-    			ctx.quadraticCurveTo(x, y, x+r, y);
-    			ctx.closePath();
-    			ctx.fill();
-        		ctx.stroke();   
-		}
+			function roundRect(ctx, x, y, w, h, r) 
+			{
+    				ctx.beginPath();
+    				ctx.moveTo(x+r, y);
+    				ctx.lineTo(x+w-r, y);
+    				ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+    				ctx.lineTo(x+w, y+h-r);
+    				ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+    				ctx.lineTo(x+r, y+h);
+    				ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+    				ctx.lineTo(x, y+r);
+    				ctx.quadraticCurveTo(x, y, x+r, y);
+    				ctx.closePath();
+    				ctx.fill();
+        			ctx.stroke();   
+			}
 
 
                         function onWindowResize() {
@@ -458,17 +458,7 @@
                       }
                       
                       function clear() {
-                      				console.log("Are they gone yet?");
-                      				scene.remove(spritey1);
-                        			scene.remove(spritey2);
-                        			scene.remove(spritey3);
-                        			scene.remove(spritey4);
-                        			scene.remove(spritey5);
-                        			scene.remove(spritey6);
-                        			scene.remove(spritey7);
-                        			scene.remove(spritey8);
-                        			setMaterial(dae, new THREE.MeshPhongMaterial({color: 0xff0000}));
-                        
+                      				spritey.rgb.set("0, 0, 0, 0.2")
                       }
                         function catchingball() {
                         	var intro = document.getElementById("intro");
