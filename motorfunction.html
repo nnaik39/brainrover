@@ -384,6 +384,8 @@
                                         case 84: 
                                           var l_7 = document.getElementById("l-7");
                                           l_7.play();
+                                          var l_8 = document.getElementById("l-8");
+                                          setTimeout({l_8.play()}, 7000);
 
                                           break; //reset
                                         
@@ -715,6 +717,11 @@
    	<audio hidden id="l-7">
   		<source src="audio/l7.ogg" type="audio/ogg"/>
   		<source src="audio/l7.mp3" type="audio/mpeg"/>
+			Your browser does not support the audio element.
+   	</audio>
+   	<audio hidden id="l-8">
+  		<source src="audio/l8.ogg" type="audio/ogg"/>
+  		<source src="audio/l8.mp3" type="audio/mpeg"/>
 			Your browser does not support the audio element.
    	</audio>
   </body>
