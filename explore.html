@@ -305,7 +305,6 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                                 tween.easing(TWEEN.Easing.Elastic.InOut);
                                 tween2.easing(TWEEN.Easing.Elastic.InOut);
 
-                                tween.start();
 
                         } // end of init
 
@@ -432,79 +431,10 @@ function roundRect(ctx, x, y, w, h, r)
                                        
                             }
                         }
-                        
-                        function laughter() {	var introl = document.getElementById("introl");
-                      				introl.play();
-                      				//step 1: left side of cerebral cortex
-                      				spritey4 = makeTextSprite( " Left Cerebral Cortex ~ structure of joke ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
-	 		     			spritey4.position.set(-2,2,-2);
-	 					
-	 					console.log("Ha! Ha! Ha...not funny.");
-
-
-                                                
-                      				var l_2 = document.getElementById("l-2");
-                      				setTimeout(function() {scene.add(spritey4)}, 5400);
-                      				setTimeout(function() {l_2.play()}, 5400);
-                                                midbrain =dae.children[0].children[0].children[4].children[0].material.color;
-
-                      				setTimeout(function() {leftTemporalLobe.color.setRGB(1, 0, 1)}, 5400); //temporal
-                      				setTimeout(function() {leftTemporalLobe.ambient.setRGB(1,0,1)}, 5400);
-
-                      				setTimeout(function() {leftOccipitalLobe.color.setRGB(1,0,1)}, 5400);
-                      				setTimeout(function() {leftOccipitalLobe.ambient.setRGB(1,0,1)}, 5400);//occipital
-
-                      				setTimeout(function() {leftFrontalLobe.color.setRGB(1,0,1)}, 5400);
-                      				setTimeout(function() {leftFrontalLobe.ambient.setRGB(1,0,1)}, 5400);
-
-                      				setTimeout(function() {leftParietalLobe.color.setRGB(1,0,1)}, 5400); //parietal
-  						setTimeout(function() {leftParietalLobe.ambient.setRGB(1,0,1)}, 5400);
-                      				//step 2: frontal lobe
-                      				var l_3 = document.getElementById("l-3");
-                      				spritey5 = makeTextSprite( " Frontal Lobe ~ appropriate social response ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
-	                     			spritey5.position.set(2,2,2);
-	                     			setTimeout(function() {scene.add( spritey5 )}, 15400);
-                      				setTimeout(function() {l_3.play()}, 15400);
-                      				setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.8,0.2)}, 15500);
-                      				setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.8,0.2)}, 15500);
-						setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.8,0.2)}, 15500);
-						setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.8,0.2)}, 15500);
-						//step 3: right side of cerebral cortex
-						var l_4 = document.getElementById("l-4");
-						 spritey6 = makeTextSprite( " Right Cerebral Cortex ~ 'gets' the joke ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
-	 		     			spritey6.position.set(-2,2,2);
-	 		     			setTimeout(function() {scene.add(spritey6)}, 20000);
-						setTimeout(function() {l_4.play()}, 20000);
-						setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.color.setRGB(0,0.2,0.8)}, 20000); //temporal
-                      				setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(0,0.2,0.8)}, 20000);
-                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0,0.2,0.8)}, 20000);
-                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0,0.2,0.8)}, 20000);
-                      				setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.2,0.8)}, 20000);
-                      				setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.2,0.8)}, 20000); //frontal
-                      				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.2,0.8)}, 20000); //parietal
-                      				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.2,0.8)}, 20000);
-                      				//step 4: occipital lobe
-                      				var l_5 = document.getElementById("l-5");
-                      				spritey7 = makeTextSprite( " Occipital Lobe ~ sensory processing ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
-	                     			spritey7.position.set(-2,-1,2);
-	                     			setTimeout(function() {scene.add(spritey7)}, 26000);
-                      				setTimeout(function() {l_5.play()}, 26000);
-                      				setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.3,0.7,0)}, 26000);
-                      				setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.3,0.7,0)}, 26000);
-                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.3,0.7,0)}, 26000);
-                      				setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.3,0.7,0)}, 26000);
-                      				//step 5: parietal lobe
-	  					spritey8 = makeTextSprite( " Parietal Lobe ~ motor control", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
-	 		     			spritey8.position.set(-2,3,2);
-	 		     			
-                      				var l_6 = document.getElementById("l-6");
-                      				setTimeout(function() {scene.add(spritey8)}, 30000);
-                      				setTimeout(function() {l_6.play()}, 30000);
-                      				setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(1,1,0)}, 30000);
-                      				setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(1,1,0)}, 30000);
-                      				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(1,1,0)}, 30000);
-                      				setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(1,1,0)}, 30000);
-                      }
+                     function tour() {
+                     	tween.start();
+                     	tween2.start();
+                     }
                         
                       
                       function  setMaterial( node ) {
@@ -525,77 +455,11 @@ function roundRect(ctx, x, y, w, h, r)
 
                                 }
 
-                      
-                      function clear() {
-                      				console.log("Are they gone yet?");
-                      				scene.remove(spritey);
-                      				scene.remove(spritey1);
-                        			scene.remove(spritey2);
-                        			scene.remove(spritey3);
-                        			scene.remove(spritey4);
-                        			scene.remove(spritey5);
-                        			scene.remove(spritey6);
-                        			scene.remove(spritey7);
-                        			scene.remove(spritey8);
-                        			setMaterial(dae, new THREE.MeshPhongMaterial({color: 0xff0000}));
-                        
-                      }
-
+          
 
 
 	 					
-                        function catchingball() {
-                                        clear();
-                                        var intro = document.getElementById("intro");
-                                        intro.play();
-                                        
-                                        console.log("Baseball!")
-                                        
-                                        var cb_occ = document.getElementById("occipital-lobe");
-                                        spritey = makeTextSprite( " Occipital Lobe ~ visual processing ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
-	                     		spritey.position.set(-2,-1,2);
-	                     		
-                                        setTimeout(function() {cb_occ.play()}, 7700);
-                                        setTimeout(function() {scene.add( spritey ) }, 7500);
-                                        setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
-                                        
-                                        setTimeout(function() {tween2.start(); dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
-                                        setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1)},7500);
-                                        setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(1,0,1)},7500);
-                                        setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},7500);
-                                        
-                                        var cb_par = document.getElementById("parietal-lobe");
-                                        spritey1 = makeTextSprite( " Parietal Lobe ~ motor control ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
-	 		     		spritey1.position.set(-2,2,2);
-	 		     
-                                        setTimeout(function() {cb_par.play()}, 14500);
-                                        setTimeout(function() {scene.add( spritey1 )}, 14400);
-                                        setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0.8,0,0.2)},14400);
-                                        setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(0.8,0,0.2)},14400);
-                                        setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0.8,0,0.2)},14400);
-                                        setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0.8,0,0.2)},14400);
-                      
-                                        var cb_cer = document.getElementById("cerebellum");
-                                         spritey2 = makeTextSprite( " Cerebellum ~ hand-eye coordination", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0, a:1.0} } );
-	 				 spritey2.position.set(-2,-2,2);
-	                     
-                                        setTimeout(function(){cb_cer.play()}, 22000);
-                                        setTimeout(function(){scene.add( spritey2 )}, 21900);
-                                        setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0,0.3,0.7)}, 21900);
-                                        setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0,0.3,0.7)}, 21900);
-                      
-                                        var cb_fro = document.getElementById("frontal-lobe");
-                                         spritey3 = makeTextSprite( " Frontal Lobe ~ decision-making ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
-	                     		spritey3.position.set(2,2,2);
-
-                                        setTimeout(function() {cb_fro.play()}, 30000)
-                                        setTimeout(function() {scene.add( spritey3 )}, 29721)
-                                        setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
-                                        setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
-                                        setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
-                                        setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
-                
-                        }
+                       
 
 
                         var t = 0;
@@ -660,9 +524,7 @@ function roundRect(ctx, x, y, w, h, r)
                 </script>
                 <p class="lead" style="top-margin:70px">Select an activity below to find out how the brain is involved.
 			<div class="btn-group">
-  				<button type="button" class="btn btn-default"><a href="javascript:clear()">Clear</a></button>
-  				<button type="button" class="btn btn-default"><a href="javascript:catchingball()">Catching a Baseball</a></button>
-				<button type="button" class="btn btn-default"><a href="javascript:laughter()">Laughing</a></button>
+  				<button type="button" class="btn btn-default"><a href="javascript:tour()">Tour</a></button>
   			
 				 </div>
 			</div>
