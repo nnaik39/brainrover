@@ -382,7 +382,8 @@
                                         case 87: z += 0.1; break ; //left
                                         case 83: z -= 0.1; break ; //right
                                         case 84: 
-                                          setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
+                                          var l_7 = document.getElementById("l-7");
+                                          l_7.play();
 
                                           break; //reset
                                         
@@ -712,6 +713,10 @@
   		<source src="audio/l6.mp3" type="audio/mpeg"/>
 			Your browser does not support the audio element.
    	</audio>
-
+   	<audio hidden id="l-7">
+  		<source src="audio/l7.ogg" type="audio/ogg"/>
+  		<source src="audio/l7.mp3" type="audio/mpeg"/>
+			Your browser does not support the audio element.
+   	</audio>
   </body>
 </html>
