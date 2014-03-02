@@ -152,7 +152,7 @@
                         var leftParietalLobe, rightParietalLobe, pituitary, midbrain, cerebellum, leftFrontalLobe, rightFrontalLobe, leftOccipitalLobe, rightOccipitalLobe, leftTemporalLobe, rightTemporalLobe;
                         var camera, scene, renderer, objects;
                         var particleLight, pointLight;
-                        var spritey, spritey1, spritey2, spritey3, spritey4, spritey5, spritey6, spritey7, spritey8;
+                        var spritey, spritey1, spritey2, spritey3, spritey4, spritey5, spritey6, spritey7, spritey8, spritey9, spritey10;
                         var particleLight2, pointLight2;
                         var dae, skin;
                         var x = 0;
@@ -384,6 +384,16 @@
                                         case 84: 
                                           var l_7 = document.getElementById("l-7");
                                           l_7.play();
+                                          
+                      			  var l_8 = document.getElementById("l-8");
+                      			  	spritey9 = makeTextSprite( " Frontal Lobe ~ planning out lie ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
+	 		     			spritey9.position.set(2,2,2);
+                      			  setTimeout({l_8.play()},7000);
+                      			  setTimeout({scene.add(spritey9)}, 7000);
+                      			  setTimeout({dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0.3,0.7,0)}, 7000);
+                      			  setTimeout({dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0.3,0.7,0)}, 7000);
+                      			  setTimeout({dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0.3,0.7,0)}, 7000);
+                      			  setTimeout({dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0.3,0.7,0)}, 7000);
 
                                           break; //reset
                                         
@@ -716,6 +726,11 @@
    	<audio hidden id="l-7">
   		<source src="audio/l7.ogg" type="audio/ogg"/>
   		<source src="audio/l7.mp3" type="audio/mpeg"/>
+			Your browser does not support the audio element.
+   	</audio>
+   	<audio hidden id="l-8">
+  		<source src="audio/l8.ogg" type="audio/ogg"/>
+  		<source src="audio/l8.mp3" type="audio/mpeg"/>
 			Your browser does not support the audio element.
    	</audio>
   </body>
