@@ -1,6 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
 <html xmlns="http://www.w3.org/1999/xhtml"> 
-
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,30 +22,7 @@
                 <script src="js/jquery.js"></script>
                 <script src="https://raw.github.com/sole/tween.js/master/build/tween.min.js"></script>
                     <style>
-#navbar ul { 
-	margin: 0; 
-	padding: 5px; 
-	list-style-type: none; 
-	text-align: center; 
-	background-color: #000; 
-	} 
- 
-#navbar ul li {  
-	display: inline; 
-	} 
- 
-#navbar ul li a { 
-	text-decoration: none; 
-	padding: .2em 1em; 
-	color: #fff; 
-	background-color: #000; 
-	} 
- 
-#navbar ul li a:hover { 
-	color: #000; 
-	background-color: #fff; 
-	} 
- 
+
     			.spinner {
       					margin: 100px auto;
       					width: 50px;
@@ -100,6 +76,87 @@
       		}
     	}
     </style>
+    <style>
+    	.header {
+    width: 100%;
+    height: 120px;
+    background: #4a74e8;
+    background: -moz-linear-gradient(top, #4a74e8 0%, #1f53e2 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4a74e8), color-stop(100%,#1f53e2));
+    background: -webkit-linear-gradient(top, #4a74e8 0%,#1f53e2 100%);
+    background: -o-linear-gradient(top, #4a74e8 0%,#1f53e2 100%);
+    background: -ms-linear-gradient(top, #4a74e8 0%,#1f53e2 100%);
+    background: linear-gradient(to bottom, #4a74e8 0%,#1f53e2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4a74e8', endColorstr='#1f53e2',GradientType=0 );
+}
+h1 {
+    font: 39px Helvetica, Arial;
+    color: #f2f8ff;
+    font-weight: bold;
+    text-shadow: 0px -1px 0px #0F74E0;
+    padding:36px 0;
+}
+.navbar {
+    width: 100%;
+    border-top: 1px solid #fcfcfc;
+    border-bottom: 1px solid #bbb;
+    box-shadow: 0px -2px 15px #ddd inset, 0px 2px 2px #f5f5f5;
+    border-collapse: separate; 
+    margin:0px 0px 15px 0px;
+    background: #f7f7f7;
+    background: -moz-linear-gradient(top, #f7f7f7 0%, #eaeaea 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#eaeaea));
+    background: -webkit-linear-gradient(top, #f7f7f7 0%,#eaeaea 100%);
+    background: -o-linear-gradient(top, #f7f7f7 0%,#eaeaea 100%);
+    background: -ms-linear-gradient(top, #f7f7f7 0%,#eaeaea 100%);
+    background: linear-gradient(to bottom, #f7f7f7 0%,#eaeaea 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#eaeaea',GradientType=0 );
+}
+.nav {
+    font: 16px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    color: #3c3c3c;
+    text-shadow: 0px 1px 0px #fcfcfc;
+    padding: 13px 20px;
+    border-left: 1px solid #dfdfdf;
+    display: inline-block;
+    margin-right:-4px;
+    transition: all 0.2s; 
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+.IEfix {
+    text-align: center;
+}
+.nav:hover {
+    background: #ffffff;
+    background: -moz-linear-gradient(top, #ffffff 0%, #eaeaea 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(100%,#eaeaea));
+    background: -webkit-linear-gradient(top, #ffffff 0%,#eaeaea 100%);
+    background: -o-linear-gradient(top, #ffffff 0%,#eaeaea 100%);
+    background: -ms-linear-gradient(top, #ffffff 0%,#eaeaea 100%);
+    background: linear-gradient(to bottom, #ffffff 0%,#eaeaea 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eaeaea',GradientType=0 );
+}
+.container {
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+    text-align: left;
+}
+.nav:active {
+    background: #d1d1d1;
+    background: -moz-linear-gradient(top, #d1d1d1 0%, #efefef 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#d1d1d1), color-stop(100%,#efefef));
+    background: -webkit-linear-gradient(top, #d1d1d1 0%,#efefef 100%);
+    background: -o-linear-gradient(top, #d1d1d1 0%,#efefef 100%);
+    background: -ms-linear-gradient(top, #d1d1d1 0%,#efefef 100%);
+    background: linear-gradient(to bottom, #d1d1d1 0%,#efefef 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d1d1d1', endColorstr='#efefef',GradientType=0 );
+    box-shadow: 0px 4px 8px #aaa inset;
+    border-collapse: separate;
+}   </style>
 
   </head>
 
@@ -107,25 +164,22 @@
   
     <div id="wrapper">
       
-      <!-- Sidebar -->
-<div id="navbar"> 
+  <div class="navbar"> 
+  <div class="IEfix"><div class="container"></div>
   <ul> 
 	<li><a href="index.html">Home</a></li> 
-	<li><a href="#">LinkHere</a></li> 
-	<li><a href="#">LinkHere</a></li> 
-	<li><a href="#">LinkHere</a></li> 
-	<li><a href="#">LinkHere</a></li> 
+	<li><a href="explore.html">Explore</a></li> 
+	<li><a href="motorfunction.html">What Happens When...?</a></li> 
+	<li><a href="#">Help</a></li> 
+	<li><a href="#">About</a></li> 
   </ul> 
+  </div>
+  </div>
 </div> 
-          
       <!-- Page content -->
       <div id="page-content-wrapper">
-        <div class="content-header">
-         <h1>
-            <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-            BrainRover: Explore Your Brain
-          </h1>
-        </div>
+        
+       
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
           <div class="row scrollable" >
@@ -137,6 +191,13 @@
               <div class="rect4"></div>
               <div class="rect5"></div>
             </div>
+            <div class="header">
+    		<div class="IEfix"><div class="container" style="">
+		<img src="#" style="float:left; margin:20px 20px 20px 0px;">
+        		<h1>BrainRover: Understand Your Brain</h1>
+    		</div></div>
+		</div>
+
             <script>
 //initialize tween here
                        var tween;
@@ -267,7 +328,6 @@
 	                     		dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.8,0,0.2);
 	                     		dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2);
 	                     		dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.8,0.2,0);
-	  
 	  var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 	 		     		spritey1.position.set(-2,2,2);
 	 		     		scene.add( spritey1 );
@@ -297,23 +357,23 @@
 	                     		dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6);
 	                     		dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6);
 	                     		
-	   var spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
-              spritey4.position.set(2, -1, -2);
-              scene.add( spritey4 );
-              var spritey5 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
-              spritey5.position.set(2, -1, 2);
-              scene.add( spritey5 );
+	   	var spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
+              				spritey4.position.set(2, -1, -2);
+              				scene.add( spritey4 );
+              				var spritey5 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
+              				spritey5.position.set(2, -1, 2);
+              				scene.add( spritey5 );
               
-              dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1);
-              dae.children[0].children[0].children[11].children[0].material.ambient.setRGB(1,0,1);
-	      dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1);
-	      dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(1,0,1);
+              				dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1);
+              				dae.children[0].children[0].children[11].children[0].material.ambient.setRGB(1,0,1);
+					dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1);
+	      				dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(1,0,1);
 
-	   var spritey9 = makeTextSprite( " Pituitary ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0} } );
-              spritey9.position.set(2, -1, 0);
-              scene.add( spritey9 );
-              dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1);
-              dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1);
+	       var spritey9 = makeTextSprite( " Pituitary ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0} } );
+              				spritey9.position.set(2, -1, 0);
+              				scene.add( spritey9 );
+              				dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1);
+              				dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1);
 
 // middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
 // cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
@@ -337,83 +397,85 @@
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
                                 window.addEventListener( 'resize', onWindowResize, false );
 
-                        }
-function makeTextSprite( message, parameters )
-{
-        if ( parameters === undefined ) parameters = {};
-        
-        var fontface = parameters.hasOwnProperty("fontface") ? 
-                parameters["fontface"] : "Arial";
-        
-        var fontsize = parameters.hasOwnProperty("fontsize") ? 
-                parameters["fontsize"] : 288;
-        
-        var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
-                parameters["borderThickness"] : 1;
-        
-        var borderColor = parameters.hasOwnProperty("borderColor") ?
-                parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
-        
-        var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
-                parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
 
-        var spriteAlignment = THREE.SpriteAlignment.topLeft;
-                
-        var canvas = document.createElement('canvas');
-        var context = canvas.getContext('2d');
-        context.font = "Bold " + fontsize + "px " + fontface;
-    
-        // get size data (height depends only on font size)
-        var metrics = context.measureText( message );
-        var textWidth = metrics.width;
+                        }
+
+			function makeTextSprite( message, parameters )
+			{
+        			if ( parameters === undefined ) parameters = {};
         
-        // background color
-        context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
+        			var fontface = parameters.hasOwnProperty("fontface") ? 
+                			parameters["fontface"] : "Arial";
+        
+        			var fontsize = parameters.hasOwnProperty("fontsize") ? 
+                			parameters["fontsize"] : 288;
+        
+        			var borderThickness = parameters.hasOwnProperty("borderThickness") ? 
+                			parameters["borderThickness"] : 1;
+        
+        			var borderColor = parameters.hasOwnProperty("borderColor") ?
+                			parameters["borderColor"] : { r:0, g:0, b:0, a:1.0 };
+        
+        			var backgroundColor = parameters.hasOwnProperty("backgroundColor") ?
+                			parameters["backgroundColor"] : { r:255, g:255, b:255, a:1.0 };
+
+        			var spriteAlignment = THREE.SpriteAlignment.topLeft;
+                
+        			var canvas = document.createElement('canvas');
+        			var context = canvas.getContext('2d');
+        				context.font = "Bold " + fontsize + "px " + fontface;
+    
+        			// get size data (height depends only on font size)
+        			var metrics = context.measureText( message );
+        			var textWidth = metrics.width;
+        
+        			// background color
+        			context.fillStyle   = "rgba(" + backgroundColor.r + "," + backgroundColor.g + ","
                                                                   + backgroundColor.b + "," + backgroundColor.a + ")";
-        // border color
-        context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
+        			// border color
+        			context.strokeStyle = "rgba(" + borderColor.r + "," + borderColor.g + ","
                                                                   + borderColor.b + "," + borderColor.a + ")";
 
-        context.lineWidth = borderThickness;
-        roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
-        // 1.4 is extra height factor for text below baseline: g,j,p,q.
+        			context.lineWidth = borderThickness;
+        			roundRect(context, borderThickness/2, borderThickness/2, textWidth + borderThickness, fontsize * 1.4 + borderThickness, 6);
+        			// 1.4 is extra height factor for text below baseline: g,j,p,q.
         
-        // text color
-        context.fillStyle = "rgba(0, 0, 0, 1.0)";
+        			// text color
+        			context.fillStyle = "rgba(0, 0, 0, 1.0)";
 
-        context.fillText( message, borderThickness, fontsize + borderThickness);
+        			context.fillText( message, borderThickness, fontsize + borderThickness);
         
-        // canvas contents will be used for a texture
-        var texture = new THREE.Texture(canvas) 
-        texture.needsUpdate = true;
+        			// canvas contents will be used for a texture
+        			var texture = new THREE.Texture(canvas) 
+        			texture.needsUpdate = true;
 
-        var spriteMaterial = new THREE.SpriteMaterial( 
-                { map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
-        var sprite = new THREE.Sprite( spriteMaterial );
+        			var spriteMaterial = new THREE.SpriteMaterial( 
+                			{ map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
+        			var sprite = new THREE.Sprite( spriteMaterial );
    
-        sprite.scale.set(10,5,1.0);
-   // was     sprite.scale.set(100,50,1.0);
+        			sprite.scale.set(10,5,1.0);
+   				// was     sprite.scale.set(100,50,1.0);
    
-        return sprite;  
-}
+        		return sprite;  
+		}
 
-// function for drawing rounded rectangles
-function roundRect(ctx, x, y, w, h, r) 
-{
-    ctx.beginPath();
-    ctx.moveTo(x+r, y);
-    ctx.lineTo(x+w-r, y);
-    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-    ctx.lineTo(x+w, y+h-r);
-    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-    ctx.lineTo(x+r, y+h);
-    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-    ctx.lineTo(x, y+r);
-    ctx.quadraticCurveTo(x, y, x+r, y);
-    ctx.closePath();
-    ctx.fill();
-        ctx.stroke();   
-}
+		// function for drawing rounded rectangles
+		function roundRect(ctx, x, y, w, h, r) 
+		{
+    			ctx.beginPath();
+    			ctx.moveTo(x+r, y);
+    			ctx.lineTo(x+w-r, y);
+    			ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+    			ctx.lineTo(x+w, y+h-r);
+    			ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+    			ctx.lineTo(x+r, y+h);
+    			ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+    			ctx.lineTo(x, y+r);
+    			ctx.quadraticCurveTo(x, y, x+r, y);
+    			ctx.closePath();
+    			ctx.fill();
+        		ctx.stroke();   
+		}
 
 
                     
@@ -478,7 +540,6 @@ function roundRect(ctx, x, y, w, h, r)
                         }
 
                         function render() {
-
                                 var timer = Date.now() * 0.0004;
                                 particleLight.position.x = Math.sin( timer * 5 ) * 4;
                                 particleLight.position.y = Math.cos( timer * 3 ) * 4;
