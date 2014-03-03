@@ -23,8 +23,9 @@
                 <script src="js/OrbitControls.js"></script>
                 <script src="js/jquery.js"></script>
                 <script src="js/jquery-ui.js"></script>
+                <script src="js/THREEx.FullScreen.js"></script>
 
-                <script src="https://raw.github.com/sole/tween.js/master/build/tween.min.js"></script>
+                <script src="js/Tween.js"></script>
                     <style>
     			.spinner {
 				    margin: 100px auto;
@@ -144,7 +145,10 @@
               <div class="rect5"></div>
             </div>
             <script>
+
 //initialize tween here
+                        var theDiv;
+
                         var tween;
                         var controls;
                         var theDiv;
@@ -158,6 +162,18 @@
                         var x = 0;
                         var y = 0;
                         var z = 0;
+                        //added for tween example
+                        var tween;
+                        var startTime = Date.now();
+                        var position = { x : 0, y: 0 };
+                        var target = { x : 0, y: 10 };
+                        var position2 = { x : 0, y: 10 };
+                        var tween = new TWEEN.Tween(position).to(target, 2000);
+                        //added for tween example
+
+                        var target2 = { x : 10, y: 10 };
+                        var tween2 = new TWEEN.Tween(position2).to(target2, 2000);
+
 
                         var loader = new THREE.ColladaLoader();
                         loader.options.convertUpAxis = false;
@@ -245,7 +261,6 @@
 
                                setMaterial(dae);
 
-                                       
 // middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
 // cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
 // pituitary: dae.children[0].children[0].children[2].children[0].material.color.setRGB(1,1,1) 
@@ -276,7 +291,7 @@
 
 //////////////////////////////
 
-                                var theDiv = document.getElementById("Foo");
+                                theDiv = document.getElementById("Foo");
                                 theDiv.appendChild( renderer.domElement );
                                 $( ".spinner" ).remove();
 
@@ -284,15 +299,29 @@
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
                                 window.addEventListener( 'resize', onWindowResize, false );
 
+                                tween.onUpdate(function(){
+                                      camera.position.x = position.x;
+                                      camera.position.y = position.y;
+                                });
+                                tween2.onUpdate(function(){
+                                      camera.position.x = position2.x;
+                                      camera.position.y = position2.y;
+                                });
+
+                                tween.easing(TWEEN.Easing.Elastic.InOut);
+                                tween2.easing(TWEEN.Easing.Elastic.InOut);
+
+                                tween.start();
+
                         } // end of init
 
  
-		function makeTextSprite( message, parameters )
+	function makeTextSprite( message, parameters )
 			{
         			if ( parameters === undefined ) parameters = {};
         
         			var fontface = parameters.hasOwnProperty("fontface") ? 
-                		parameters["fontface"] : "Arial";
+                                parameters["fontface"] : "Arial";
         
         			var fontsize = parameters.hasOwnProperty("fontsize") ? 
                 		parameters["fontsize"] : 288;
@@ -346,7 +375,7 @@
 		}
 
 // function for drawing rounded rectangles
-		function roundRect(ctx, x, y, w, h, r) 
+	function roundRect(ctx, x, y, w, h, r)
 		{
     			ctx.beginPath();
     			ctx.moveTo(x+r, y);
@@ -360,8 +389,28 @@
     			ctx.quadraticCurveTo(x, y, x+r, y);
     			ctx.closePath();
     			ctx.fill();
-        		ctx.stroke();   
+        		ctx.stroke();
 		}
+
+
+
+// function for drawing rounded rectangles
+function roundRect(ctx, x, y, w, h, r) 
+{
+    ctx.beginPath();
+    ctx.moveTo(x+r, y);
+    ctx.lineTo(x+w-r, y);
+    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+    ctx.lineTo(x+w, y+h-r);
+    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+    ctx.lineTo(x+r, y+h);
+    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+    ctx.lineTo(x, y+r);
+    ctx.quadraticCurveTo(x, y, x+r, y);
+    ctx.closePath();
+    ctx.fill();
+        ctx.stroke();   
+}
 
 
                         function onWindowResize() {
@@ -373,11 +422,18 @@
 
                         }
 
-                        function onDocumentKeyDown(event) 
+                        function onDocumentKeyDown(event)
                         {
-                                switch ( event.keyCode) 
+                                switch ( event.keyCode)
                                 {
-                                        case 68: x += 0.1; break ; //right
+                                        case 68:
+
+                                          if( THREEx.FullScreen.activated() ){
+                                            THREEx.FullScreen.cancel();
+                                          }else{
+                                            THREEx.FullScreen.request(theDiv);
+                                          }; break ; //right
+
                                         case 65: x -= 0.1; break ; //left
                                         case 87: z += 0.1; break ; //left
                                         case 83: z -= 0.1; break ; //right
@@ -388,11 +444,8 @@
                                           setTimeout(function() {l_8.play()}, 12000);
 
                                           break; //reset
-                                        
-                                       
                             }
                         }
-                        
                         function laughter() {	var introl = document.getElementById("introl");
                       				introl.play();
                       				//step 1: left side of cerebral cortex
@@ -513,6 +566,7 @@
                                         setTimeout(function() {cb_occ.play()}, 7700);
                                         setTimeout(function() {scene.add( spritey ) }, 7500);
                                         setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
+                                        setTimeout(function() {tween2.start(); dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
                                         setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(1,0,1)},7500);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(1,0,1)},7500);
                                         setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(1,0,1)},7500);
@@ -586,6 +640,11 @@
                                 }
 
                                 controls.update();
+
+                                //added for tween example
+                                TWEEN.update();
+                                //added for tween example
+
                                 render();
 
                         }
