@@ -158,12 +158,6 @@ a:hover {
     float: left;
 }
 
-.monitor img {
-    position: absolute;
-    top: 10px;
-    left: 11px;
-    width: 196px;
-}
 
 #main-img {
     overflow:hidden;
