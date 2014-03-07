@@ -253,7 +253,7 @@
 
 
                                setMaterial(dae);
- var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+					 var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey.position.set(-2,-1,2);
 	                     		scene.add( spritey );
 	                 var spritey8 = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
@@ -488,6 +488,20 @@ function roundRect(ctx, x, y, w, h, r)
                      function tour() {
                      	tween.start();
                      	tween2.start();
+                     	var frontal_lobe = document.getElementById("frontal-lobe");
+                     	setTimeout(function() {frontal_lobe.play()}, 2000);
+                     		 	  var spritey3 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
+	                     		spritey3.position.set(2,2,2);
+	                     		setTimeout(function() {scene.add( spritey3 )}, 2000);
+	          var spritey6 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
+	                     		spritey6.position.set(2,2,-2);
+	                     		setTimeout(function() {scene.add( spritey6 )}, 2000);
+
+	                     		setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.4,0.6)}, 2000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.4,0.6)}, 2000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6)}, 2000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6)}, 2000);
+
                      }
                         
                       
