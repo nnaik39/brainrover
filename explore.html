@@ -15,6 +15,7 @@
     <link href="css/simple-sidebar.css" rel="stylesheet"/>
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
     <link href="css/jquery-ui.css" rel=stylesheet />
+    <link href="css/navbar.css" rel="stylesheet">
 
 
                 <script src="build/three.min.js"></script>
@@ -114,24 +115,23 @@
     <div id="wrapper">
 
       <!-- Sidebar -->
-     <div id="navbar"> 
-  	<ul> 
-	<li><a href="index.html">Home</a></li> 
-	<li><a href="#">Explore</a></li> 
-	<li><a href="motorfunction.html">What Happens When...?</a></li> 
-	<li><a href="#">Help</a></li> 
-	<li><a href="#">About</a></li> 
-  </ul> 
+     <div class="navbar"> 
+  <div class="IEfix"><div class="container"></div>
+  	<a href="index.html"><div class="nav">Home</div></a>
+  	<a href="explore.html"><div class="nav">Explore</div></a>
+  	<a href="motorfunction.html"><div class="nav">What Happens When...?</div></a>
+  	<a href="about.html"><div class="nav">About</div></a>
+  </div>
+  </div>
 </div> 
           
       <!-- Page content -->
       <div id="page-content-wrapper">
-        <div class="content-header">
-         <h1>
-            <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-            BrainRover: Explore the Brain
-          </h1>
-        </div>
+         <div class="header">
+    		<div class="IEfix"><div class="container" style="">
+        		<h1 style="text-align:center font-size: 20px">BrainRover: Explore</h1>
+    		</div></div>
+		</div>
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
           <div class="row scrollable" >
@@ -253,7 +253,7 @@
 
 
                                setMaterial(dae);
- var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+					 var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey.position.set(-2,-1,2);
 	                     		scene.add( spritey );
 	                 var spritey8 = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
@@ -280,18 +280,7 @@
 	 				 scene.add( spritey2 );
 	 				 dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0.7,0.3,0);
 	 				 dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0.7,0.3,0);
-	 	  var spritey3 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
-	                     		spritey3.position.set(2,2,2);
-	                     		scene.add( spritey3 );
-	          var spritey6 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
-	                     		spritey6.position.set(2,2,-2);
-	                     		scene.add( spritey6 );
-
-	                     		dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.4,0.6);
-	                     		dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.4,0.6);
-	                     		dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6);
-	                     		dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6);
-
+	 	  
 	   	var spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
               				spritey4.position.set(2, -1, -2);
               				scene.add( spritey4 );
@@ -488,6 +477,20 @@ function roundRect(ctx, x, y, w, h, r)
                      function tour() {
                      	tween.start();
                      	tween2.start();
+                     	var frontal_lobe = document.getElementById("frontal-lobe");
+                     	setTimeout(function() {frontal_lobe.play()}, 2000);
+                     		 	  var spritey3 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
+	                     		spritey3.position.set(2,2,2);
+	                     		setTimeout(function() {scene.add( spritey3 )}, 2000);
+	          var spritey6 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
+	                     		spritey6.position.set(2,2,-2);
+	                     		setTimeout(function() {scene.add( spritey6 )}, 2000);
+
+	                     		setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.4,0.6)}, 2000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.4,0.6)}, 2000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6)}, 2000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6)}, 2000);
+
                      }
                         
                       
@@ -623,64 +626,11 @@ function roundRect(ctx, x, y, w, h, r)
 
     $("#faded").delay(2000).fadeToggle(1500);
     </script>
-    <audio hidden id="intro">
-  	<source src="audio/intro.ogg" type="audio/ogg"/>
-  	<source src="audio/intro.mp3" type="audio/mpeg"/>
+    <audio hidden id="frontal-lobe">
+  	<source src="audio/frontal_lobe.ogg" type="audio/ogg"/>
+  	<source src="audio/frontal_lobe.mp3" type="audio/mpeg"/>
 		Your browser does not support the audio element.
     </audio>
 
-   <audio hidden id="occipital-lobe">
-  	<source src="audio/cb2.ogg" type="audio/ogg"/>
-  	<source src="audio/cb2.mp3" type="audio/mpeg"/>
-		Your browser does not support the audio element.
-   </audio>
-
-   <audio hidden id="parietal-lobe">
-  	<source src="audio/cb3.ogg" type="audio/ogg"/>
-  	<source src="audio/cb3.mp3" type="audio/mpeg"/>
-		Your browser does not support the audio element.
-   </audio>
-
-   <audio hidden id="cerebellum">
-  	<source src="audio/cb4.ogg" type="audio/ogg"/>
-  	<source src="audio/cb4.mp3" type="audio/mpeg"/>
-		Your browser does not support the audio element.
-   </audio>
-
-   <audio hidden id="frontal-lobe">
-  	<source src="audio/cb5.ogg" type="audio/ogg"/>
-  	<source src="audio/cb5.mp3" type="audio/mpeg"/>
-		Your browser does not support the audio element.
-   </audio>
-<audio hidden id="introl">
-  	<source src="audio/introl.ogg" type="audio/ogg"/>
-  	<source src="audio/introl.mp3" type="audio/mpeg"/>
-		Your browser does not support the audio element.
-   </audio>
-   <audio hidden id="l-2">
-  	<source src="audio/l2.ogg" type="audio/ogg"/>
-  	<source src="audio/l2.mp3" type="audio/mpeg"/>
-		Your browser does not support the audio element.
-   </audio>
-    <audio hidden id="l-3">
-  	<source src="audio/l3.ogg" type="audio/ogg"/>
-  	<source src="audio/l3.mp3" type="audio/mpeg"/>
-		Your browser does not support the audio element.
-   </audio>
-	<audio hidden id="l-4">
-  		<source src="audio/l4.ogg" type="audio/ogg"/>
-  		<source src="audio/l4.mp3" type="audio/mpeg"/>
-			Your browser does not support the audio element.
-   	</audio>
-   	<audio hidden id="l-5">
-  		<source src="audio/l5.ogg" type="audio/ogg"/>
-  		<source src="audio/l5.mp3" type="audio/mpeg"/>
-			Your browser does not support the audio element.
-   	</audio>
-   	<audio hidden id="l-6">
-  		<source src="audio/l6.ogg" type="audio/ogg"/>
-  		<source src="audio/l6.mp3" type="audio/mpeg"/>
-			Your browser does not support the audio element.
-   	</audio>
   </body>
 </html>

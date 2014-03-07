@@ -12,9 +12,10 @@
     <link href="css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="css/simple-sidebar.css" rel="stylesheet"/>
+    <link href="css/navbar.css" rel="stylesheet">
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="css/jquery-ui.css" rel=stylesheet />
+    <link href="css/jquery-ui.css" rel="stylesheet" />
+    <link href="css/simple-sidebar.css" rel="stylesheet">
 
 
                 <script src="build/three.min.js"></script>
@@ -80,33 +81,6 @@
       						}
     					}
     </style>
-    <style type="text/css">
-    	 			#navbar ul { 
-						margin: 0; 
-						padding: 5px; 
-						list-style-type: none; 
-						text-align: center; 
-						background-color: #000; 
-						} 
- 
-				#navbar ul li {  
-						display: inline; 
-						} 
- 
-				#navbar ul li a { 
-							text-decoration: none; 
-							padding: .2em 1em; 
-							color: #fff; 
-							background-color: #000; 
-						} 
- 
-				#navbar ul li a:hover { 
-							color: #000; 
-							background-color: #fff; 
-							} 
- 
-    	
-    </style>
 
   </head>
 
@@ -115,24 +89,19 @@
     <div id="wrapper">
 
       <!-- Sidebar -->
-     <div id="navbar"> 
-  	<ul> 
-	<li><a href="index.html">Home</a></li> 
-	<li><a href="explore.html">Explore</a></li> 
-	<li><a href="motorfunction.html">What Happens When...?</a></li> 
-	<li><a href="#">Help</a></li> 
-	<li><a href="#">About</a></li> 
-  </ul> 
-</div> 
+      <div class="navbar"> 
+  		<div class="IEfix"><div class="container"></div>
+  			<a href="index.html"><div class="nav">Home</div></a>
+  			<a href="explore.html"><div class="nav">Explore</div></a>
+  			<a href="motorfunction.html"><div class="nav">What Happens When...?</div></a>
+  			<a href="about.html"><div class="nav">About</div></a>
+  		</div>
+  		</div>
+  	</div>
           
       <!-- Page content -->
       <div id="page-content-wrapper">
-        <div class="content-header">
-         <h1>
-            <a id="menu-toggle" href="#" class="btn btn-default"><i class="icon-reorder"></i></a>
-            BrainRover: What Happens When...?
-          </h1>
-        </div>
+   
         <!-- Keep all page content within the page-content inset div! -->
         <div class="page-content inset">
           <div class="row scrollable" >
@@ -144,6 +113,11 @@
               <div class="rect4"></div>
               <div class="rect5"></div>
             </div>
+             <div class="header">
+            <div class="IEfix"><div class="container" style="">
+                <h1>BrainRover: What Happens When...?</h1>
+            </div></div>
+        </div>
             <script>
 
 //initialize tween here
