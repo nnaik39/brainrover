@@ -263,17 +263,7 @@
 	                     		dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.8,0,0.2);
 	                     		dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2);
 	                     		dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.8,0.2,0);
-	  var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
-	 		     		spritey1.position.set(-2,2,2);
-	 		     		scene.add( spritey1 );
-	 var spritey7 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
-	 		     		spritey7.position.set(-2,2,-2);
-	 		     		scene.add( spritey7 );
-
-	 		     		dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(0,0.9,0.1);
-	 		     		dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0,0.9,0.1);
-	 		     		dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.9,0.1);
-	 		     		dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.9,0.1);
+	  
 
      var spritey2 = makeTextSprite( " Cerebellum ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0, a:1.0} } );
 	 				 spritey2.position.set(-2,-2,2);	 		 
@@ -431,22 +421,22 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 
 
 // function for drawing rounded rectangles
-function roundRect(ctx, x, y, w, h, r) 
-{
-    ctx.beginPath();
-    ctx.moveTo(x+r, y);
-    ctx.lineTo(x+w-r, y);
-    ctx.quadraticCurveTo(x+w, y, x+w, y+r);
-    ctx.lineTo(x+w, y+h-r);
-    ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
-    ctx.lineTo(x+r, y+h);
-    ctx.quadraticCurveTo(x, y+h, x, y+h-r);
-    ctx.lineTo(x, y+r);
-    ctx.quadraticCurveTo(x, y, x+r, y);
-    ctx.closePath();
-    ctx.fill();
-        ctx.stroke();   
-}
+	function roundRect(ctx, x, y, w, h, r) 
+	{
+    		ctx.beginPath();
+    		ctx.moveTo(x+r, y);
+    		ctx.lineTo(x+w-r, y);
+    		ctx.quadraticCurveTo(x+w, y, x+w, y+r);
+    		ctx.lineTo(x+w, y+h-r);
+    		ctx.quadraticCurveTo(x+w, y+h, x+w-r, y+h);
+    		ctx.lineTo(x+r, y+h);
+    		ctx.quadraticCurveTo(x, y+h, x, y+h-r);
+    		ctx.lineTo(x, y+r);
+    		ctx.quadraticCurveTo(x, y, x+r, y);
+    		ctx.closePath();
+    		ctx.fill();
+        	ctx.stroke();   
+	}
 
 
                         function onWindowResize() {
@@ -491,6 +481,19 @@ function roundRect(ctx, x, y, w, h, r)
 	                     		setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6)}, 2000);
 	                     		setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6)}, 2000);
 
+			var parietal_lobe = document.getElementById("parietal-lobe");
+			setTimeout(function() {parietal_lobe.play()}, 6000);
+			var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
+	 		     		spritey1.position.set(-2,2,2);
+	 		     		setTimeout(function() {scene.add( spritey1 )}, 6000);
+	 var spritey7 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
+	 		     		spritey7.position.set(-2,2,-2);
+	 		     		setTimeout(function() {scene.add( spritey7 )}, 6000);
+
+	 		     		setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 6000);
+	 		     		setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 6000);
+	 		     		setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 6000);
+	 		     		setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 6000);
                      }
                         
                       
@@ -631,6 +634,10 @@ function roundRect(ctx, x, y, w, h, r)
   	<source src="audio/frontal_lobe.mp3" type="audio/mpeg"/>
 		Your browser does not support the audio element.
     </audio>
-
+	<audio hidden id="parietal-lobe">
+  		<source src="audio/parietal_lobe.ogg" type="audio/ogg"/>
+  		<source src="audio/parietal_lobe.mp3" type="audio/mpeg"/>
+			Your browser does not support the audio element.
+    </audio>
   </body>
 </html>
