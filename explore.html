@@ -253,6 +253,7 @@
 
 
                                setMaterial(dae);
+                               
 					 var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey.position.set(-2,-1,2);
 	                     		scene.add( spritey );
@@ -494,7 +495,24 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 	 		     		setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 25000);
 	 		     		setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 25000);
 	 		     		setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 25000);
+ 		var occipital_lobe = document.getElementById("occipital-lobe");
+ 		setTimeout(function() {occipital_lobe.play()}, 35000);
+ 		
+  		var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+	                     		spritey.position.set(-2,-1,2);
+	                     		setTimeout(function() {scene.add( spritey )}, 35000);
+	                 var spritey8 = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+	                     		spritey8.position.set(-2,-1,-3);
+	                     		setTimeout(function() {scene.add( spritey8 )}, 35000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.8,0,0.2)}, 35000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.8,0,0.2)}, 35000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2)}, 35000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.8,0,0.2)}, 35000);
+	  
+
+ 
                      }
+                   
                         
                       
                       function  setMaterial( node ) {
@@ -637,6 +655,11 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 	<audio hidden id="parietal-lobe">
   		<source src="audio/parietal_lobe.ogg" type="audio/ogg"/>
   		<source src="audio/parietal_lobe.mp3" type="audio/mpeg"/>
+			Your browser does not support the audio element.
+    </audio>
+    <audio hidden id="occipital-lobe">
+  		<source src="audio/occipital_lobe.ogg" type="audio/ogg"/>
+  		<source src="audio/occipital_lobe.mp3" type="audio/mpeg"/>
 			Your browser does not support the audio element.
     </audio>
   </body>
