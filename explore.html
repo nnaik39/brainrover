@@ -499,6 +499,19 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 	                     		setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2)}, 50000);
 	                     		setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.8,0,0.2)}, 50000);
 	  
+		var temporal_lobe = document.getElementById("temporal-lobe");
+		setTimeout(function() {temporal_lobe.play()}, 60000);
+		ar spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
+              				spritey4.position.set(2, -1, -2);
+              				setTimeout(function() {scene.add( spritey4 )}, 60000);
+              				var spritey5 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
+              				spritey5.position.set(2, -1, 2);
+              				setTimeout(function() {scene.add( spritey5 )}, 60000);
+              
+              				setTimeout(function() {dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1)}, 60000);
+              				setTimeout(function() {dae.children[0].children[0].children[11].children[0].material.ambient.setRGB(1,0,1)}, 60000);
+					setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1)}, 60000);
+	      				setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(1,0,1)}, 60000);
 
  
                      }
@@ -650,6 +663,11 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
     <audio hidden id="occipital-lobe">
   		<source src="audio/occipital_lobe.ogg" type="audio/ogg"/>
   		<source src="audio/occipital_lobe.mp3" type="audio/mpeg"/>
+			Your browser does not support the audio element.
+    </audio>
+    <audio hidden id="temporal-lobe">
+  		<source src="audio/temporal_lobe.ogg" type="audio/ogg"/>
+  		<source src="audio/temporal_lobe.mp3" type="audio/mpeg"/>
 			Your browser does not support the audio element.
     </audio>
   </body>
