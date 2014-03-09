@@ -113,15 +113,10 @@
               <div class="rect5"></div>
             </div>
              <div class="header">
-            <div class="IEfix">
-                <div class="row">
-                    <div id="header" class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3">
-                      <div class="header">
-                    <h1>BrainRover: What Happens When...?</h1>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+            <div class="IEfix"><div class="container" style="">
+                <h1>BrainRover: What Happens When...?</h1>
+            </div></div>
+        </div>
             <script>
 //initialize tween here
                         var tween;
@@ -137,7 +132,6 @@
                         var x = 0;
                         var y = 0;
                         var z = 0;
-                        var tween = new TWEEN.Tween(position).to(target, 4000);
 
                         var loader = new THREE.ColladaLoader();
                         loader.options.convertUpAxis = false;
@@ -263,14 +257,6 @@
 
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
                                 window.addEventListener( 'resize', onWindowResize, false );
-                                tween.onUpdate(function(){
-                                      camera.position.x = position.x;
-                                      camera.position.y = position.y;
-                                });
-                                
-
-                                tween.easing(TWEEN.Easing.Cubic.InOut);
-                                //tween2.easing(TWEEN.Easing.Cubic.InOut);
 
                         } // end of init
 
@@ -380,81 +366,6 @@
                                        
                             }
                         }
-                        function gotoOccipitalLobe(){
-                                                        
-                                                   //added for tween example
-                                startTime = Date.now();
-                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
-                                target = { x: -8.34, y: -2.14, z: -2.67 };
-                                tween = new TWEEN.Tween(position).to(target, 4000);
-                                //added for tween example
- 
-                                tween.onUpdate(function(){
-                                      camera.position.x = position.x;
-                                      camera.position.y = position.y;
-                                      camera.position.z = position.z;
- 
-                                });
- 
-                                tween.easing(TWEEN.Easing.Cubic.InOut);
-                                tween.start();
-                          }
-                          function gotoCerebellum(){
-                                                        
-                                                   //added for tween example
-                                startTime = Date.now();
-                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
-                                target = { x: -6.16, y: -6.87, z: 0 };
-                                tween = new TWEEN.Tween(position).to(target, 4000);
-                                //added for tween example
- 
-                                tween.onUpdate(function(){
-                                      camera.position.x = position.x;
-                                      camera.position.y = position.y;
-                                      camera.position.z = position.z;
- 
-                                });
- 
-                                tween.easing(TWEEN.Easing.Cubic.InOut);
-                                tween.start();
-                          }
-                          function gotoFrontalLobe(){
-                                                        
-                                                      //added for tween example
-                                startTime = Date.now();
-                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
-                                target = { x: 6.66, y: 1.21, z:1.96 };
-                                tween = new TWEEN.Tween(position).to(target, 4000);
-                                //added for tween example
- 
-                                tween.onUpdate(function(){
-                                      camera.position.x = position.x;
-                                      camera.position.y = position.y;
-                                      camera.position.z = position.z;
- 
-                                });
- 
-                                tween.easing(TWEEN.Easing.Cubic.InOut);
-                                tween.start();
-                          }
-                          function gotoParietalLobe(){
-                                                        
-                                                      //added for tween example
-                                startTime = Date.now();
-                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
-                                target = { x: -6.68, y:3.99, z:-0.69 };
-                                tween = new TWEEN.Tween(position).to(target, 4000);
-                                //added for tween example
- 
-                                tween.onUpdate(function(){
-                                      camera.position.x = position.x;
-                                      camera.position.y = position.y;
-                                      camera.position.z = position.z;
-                                });
- 
-                                tween.easing(TWEEN.Easing.Cubic.InOut);
-                                tween.start();
-                          }
                         
                         function laughter() {	var introl = document.getElementById("introl");
                       				introl.play();
@@ -546,6 +457,7 @@
 
                       
                       function clear() {
+                      				console.log("Are they gone yet?");
                       				scene.remove(spritey);
                       				scene.remove(spritey1);
                         			scene.remove(spritey2);
@@ -572,7 +484,6 @@
                                         spritey = makeTextSprite( " 1. Occipital Lobe ~ visual processing ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey.position.set(-2,-1,2);
 	                     		
-	                     		setTimeout(function() {gotoOccipitalLobe()}, 3700)
                                         setTimeout(function() {cb_occ.play()}, 7700);
                                         setTimeout(function() {scene.add( spritey ) }, 7500);
                                         setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(1,0,1)}, 7500);
@@ -583,8 +494,7 @@
                                         var cb_par = document.getElementById("parietal-lobe");
                                         spritey1 = makeTextSprite( " 2. Parietal Lobe ~ motor control ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 	 		     		spritey1.position.set(-2,2,2);
-	 		     		
-	 		     		setTimeout(function() {gotoParietalLobe()}, 10500);
+	 		     
                                         setTimeout(function() {cb_par.play()}, 14500);
                                         setTimeout(function() {scene.add( spritey1 )}, 14400);
                                         setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0.8,0,0.2)},14400);
@@ -595,7 +505,7 @@
                                         var cb_cer = document.getElementById("cerebellum");
                                          spritey2 = makeTextSprite( " 3. Cerebellum ~ hand-eye coordination", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0, a:1.0} } );
 	 				 spritey2.position.set(-2,-2,2);
-	                     		setTimeout(function() {gotoCerebellum()}, 18000);
+	                     
                                         setTimeout(function(){cb_cer.play()}, 22000);
                                         setTimeout(function(){scene.add( spritey2 )}, 21900);
                                         setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0,0.3,0.7)}, 21900);
@@ -611,7 +521,6 @@
                                         setTimeout (function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
                                         setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 29721);
                                         setTimeout (function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 29721);
-                                        setTimeout(function() {gotoFrontalLobe()}, 25721);
                 
                         }
 
