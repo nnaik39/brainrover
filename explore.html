@@ -15,6 +15,7 @@
     <link href="css/simple-sidebar.css" rel="stylesheet"/>
     <link href="css/jquery-ui.css" rel=stylesheet />
     <link href="css/navbar.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet"/>
 
 
                 <script src="build/three.min.js"></script>
@@ -156,7 +157,7 @@
                         var x = 0;
                         var y = 0;
                         var z = 0;
-
+			var thefontsize = 30;
                         //added for tween example
                         var tween;
                         var startTime = Date.now();
@@ -167,7 +168,7 @@
                         //added for tween example
 
                         var target2 = { x : 10, y: 10 };
-                        var tween2 = new TWEEN.Tween(position2).to(target2, 4000);
+
 
                         var loader = new THREE.ColladaLoader();
                         loader.options.convertUpAxis = false;
@@ -296,13 +297,10 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                                       camera.position.x = position.x;
                                       camera.position.y = position.y;
                                 });
-                                tween2.onUpdate(function(){
-                                      camera.position.x = position2.x;
-                                      camera.position.y = position2.y;
-                                });
+                                
 
-                                tween.easing(TWEEN.Easing.Elastic.InOut);
-                                tween2.easing(TWEEN.Easing.Elastic.InOut);
+                                tween.easing(TWEEN.Easing.Cubic.InOut);
+                                tween2.easing(TWEEN.Easing.Cubic.InOut);
 
 
                         } // end of init
@@ -361,7 +359,7 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                 			{ map: texture, useScreenCoordinates: false, alignment: spriteAlignment } );
         			var sprite = new THREE.Sprite( spriteMaterial );
    
-        			sprite.scale.set(10,5,1.0);
+        			sprite.scale.set(2.5,1.25,1.0);
    				// was     sprite.scale.set(100,50,1.0);
    
         		return sprite;  
@@ -430,15 +428,53 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                                        
                             }
                         }
+                         function gotoParietalLobe(){
+                                                        
+                                                      //added for tween example
+                                startTime = Date.now();
+                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
+                                target = { x: -6.68, y:3.99, z:-0.69 };
+                                tween = new TWEEN.Tween(position).to(target, 4000);
+                                //added for tween example
+ 
+                                tween.onUpdate(function(){
+                                      camera.position.x = position.x;
+                                      camera.position.y = position.y;
+                                      camera.position.z = position.z;
+                                });
+ 
+                                tween.easing(TWEEN.Easing.Cubic.InOut);
+                                tween.start();
+                          }
+                          function gotoFrontalLobe(){
+                                                        
+                                                      //added for tween example
+                                startTime = Date.now();
+                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
+                                target = { x: -7.01, y:-0.51, z:1.19 };
+                                tween = new TWEEN.Tween(position).to(target, 4000);
+                                //added for tween example
+ 
+                                tween.onUpdate(function(){
+                                      camera.position.x = position.x;
+                                      camera.position.y = position.y;
+                                      camera.position.z = position.z;
+ 
+                                });
+ 
+                                tween.easing(TWEEN.Easing.Cubic.InOut);
+                                tween.start();
+                          }
                      function tour() {
                      	tween.start();
                      	tween2.start();
+                     	setTimeout(function() {gotoFrontalLobe()}, 2000);
                      	var frontal_lobe = document.getElementById("frontal-lobe");
                      	setTimeout(function() {frontal_lobe.play()}, 2000);
-                     		 	  var spritey3 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
+                     		 	  var spritey3 = makeTextSprite( " Frontal Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
 	                     		spritey3.position.set(2,2,2);
 	                     		setTimeout(function() {scene.add( spritey3 )}, 2000);
-	          			var spritey6 = makeTextSprite( " Frontal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
+	          			var spritey6 = makeTextSprite( " Frontal Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
 	                     		spritey6.position.set(2,2,-2);
 	                     		setTimeout(function() {scene.add( spritey6 )}, 2000);
 
@@ -447,12 +483,13 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 	                     		setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6)}, 2000);
 	                     		setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6)}, 2000);
 
+					setTimeout(function() {gotoParietalLobe()}, 27000);
 					var parietal_lobe = document.getElementById("parietal-lobe");
 					setTimeout(function() {parietal_lobe.play()}, 27000);
-					var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
+					var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 	 		     		spritey1.position.set(-2,2,2);
 	 		     		setTimeout(function() {scene.add( spritey1 )}, 27000);
-	 				var spritey7 = makeTextSprite( " Parietal Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
+	 				var spritey7 = makeTextSprite( " Parietal Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 	 		     		spritey7.position.set(-2,2,-2);
 	 		     		setTimeout(function() {scene.add( spritey7 )}, 27000);
 
@@ -463,10 +500,10 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
  					var occipital_lobe = document.getElementById("occipital-lobe");
  					setTimeout(function() {occipital_lobe.play()}, 49000);
  		
-  					var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+  					var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey.position.set(-2,-1,2);
 	                     		setTimeout(function() {scene.add( spritey )}, 49000);
-	                 		var spritey8 = makeTextSprite( " Occipital Lobe ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
+	                 		var spritey8 = makeTextSprite( " Occipital Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey8.position.set(-2,-1,-3);
 	                     		setTimeout(function() {scene.add( spritey8 )}, 49000);
 	                     		setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.8,0,0.2)}, 49000);
@@ -476,10 +513,10 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 	  
 					var temporal_lobe = document.getElementById("temporal-lobe");
 					setTimeout(function() {temporal_lobe.play()}, 65000);
-					var spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
+					var spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
               				spritey4.position.set(2, -1, -2);
               				setTimeout(function() {scene.add( spritey4 )}, 65000);
-              				var spritey5 = makeTextSprite( " Temporal Lobe ", {fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
+              				var spritey5 = makeTextSprite( " Temporal Lobe ", {fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
               				spritey5.position.set(2, -1, 2);
               				setTimeout(function() {scene.add( spritey5 )}, 65000);
               
@@ -491,7 +528,7 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
  					var cerebellum = document.getElementById("cerebellum");
  					setTimeout(function() {cerebellum.play()}, 75000);
  					
-     					var spritey2 = makeTextSprite( " Cerebellum ", { fontsize: 10, fontface: "Georgia", borderColor: {r:0, g:255, b:0, a:1.0} } );
+     					var spritey2 = makeTextSprite( " Cerebellum ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:255, b:0, a:1.0} } );
 	 				 spritey2.position.set(-2,-2,2);	 		 
 	 				 setTimeout(function() {scene.add( spritey2 )}, 75000);
 	 				 setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0.7,0.3,0)}, 75000);
