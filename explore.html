@@ -451,7 +451,26 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                                                       //added for tween example
                                 startTime = Date.now();
                                 position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
-                                target = { x: -7.01, y:-0.51, z:1.19 };
+                                target = { x: 6.66, y: 1.21, z:1.96 };
+                                tween = new TWEEN.Tween(position).to(target, 4000);
+                                //added for tween example
+ 
+                                tween.onUpdate(function(){
+                                      camera.position.x = position.x;
+                                      camera.position.y = position.y;
+                                      camera.position.z = position.z;
+ 
+                                });
+ 
+                                tween.easing(TWEEN.Easing.Cubic.InOut);
+                                tween.start();
+                          }
+                          function gotoOccipitalLobe(){
+                                                        
+                                                   //added for tween example
+                                startTime = Date.now();
+                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
+                                target = { x: 6.66, y: 1.21, z:1.96 };
                                 tween = new TWEEN.Tween(position).to(target, 4000);
                                 //added for tween example
  
@@ -468,80 +487,80 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                      function tour() {
                      	//tween.start();
                      	//tween2.start();
-                     	setTimeout(function() {gotoFrontalLobe()}, 2000);
+                     	gotoFrontalLobe();
                      	var frontal_lobe = document.getElementById("frontal-lobe");
-                     	setTimeout(function() {frontal_lobe.play()}, 2000);
+                     	frontal_lobe.play();
                      		 	  var spritey3 = makeTextSprite( " Frontal Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
 	                     		spritey3.position.set(2,2,2);
-	                     		setTimeout(function() {scene.add( spritey3 )}, 2000);
+	                     		scene.add( spritey3);
 	          			var spritey6 = makeTextSprite( " Frontal Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
 	                     		spritey6.position.set(2,2,-2);
-	                     		setTimeout(function() {scene.add( spritey6 )}, 2000);
+	                     		scene.add( spritey6 );
 
-	                     		setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.4,0.6)}, 2000);
-	                     		setTimeout(function() {dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.4,0.6)}, 2000);
-	                     		setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6)}, 2000);
-	                     		setTimeout(function() {dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6)}, 2000);
+	                     		dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.4,0.6);
+	                     		dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.4,0.6);
+	                     		dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6);
+	                     		dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6);
 
-					setTimeout(function() {gotoParietalLobe()}, 27000);
+					setTimeout(function() {gotoParietalLobe()}, 25000);
 					var parietal_lobe = document.getElementById("parietal-lobe");
-					setTimeout(function() {parietal_lobe.play()}, 27000);
+					setTimeout(function() {parietal_lobe.play()}, 25000);
 					var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 	 		     		spritey1.position.set(-2,2,2);
-	 		     		setTimeout(function() {scene.add( spritey1 )}, 27000);
+	 		     		setTimeout(function() {scene.add( spritey1 )}, 25000);
 	 				var spritey7 = makeTextSprite( " Parietal Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 	 		     		spritey7.position.set(-2,2,-2);
-	 		     		setTimeout(function() {scene.add( spritey7 )}, 27000);
+	 		     		setTimeout(function() {scene.add( spritey7 )}, 25000);
 
-	 		     		setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 27000);
-	 		     		setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 27000);
-	 		     		setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 27000);
-	 		     		setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 27000);
+	 		     		setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 25000);
+	 		     		setTimeout(function() {dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 25000);
+	 		     		setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.9,0.1)}, 25000);
+	 		     		setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 25000);
  					var occipital_lobe = document.getElementById("occipital-lobe");
- 					setTimeout(function() {occipital_lobe.play()}, 49000);
+ 					setTimeout(function() {occipital_lobe.play()}, 47000);
  		
   					var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey.position.set(-2,-1,2);
-	                     		setTimeout(function() {scene.add( spritey )}, 49000);
+	                     		setTimeout(function() {scene.add( spritey )}, 47000);
 	                 		var spritey8 = makeTextSprite( " Occipital Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey8.position.set(-2,-1,-3);
-	                     		setTimeout(function() {scene.add( spritey8 )}, 49000);
-	                     		setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.8,0,0.2)}, 49000);
-	                     		setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.8,0,0.2)}, 49000);
-	                     		setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2)}, 49000);
-	                     		setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.8,0,0.2)}, 49000);
+	                     		setTimeout(function() {scene.add( spritey8 )}, 47000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.8,0,0.2)}, 47000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.8,0,0.2)}, 47000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2)}, 47000);
+	                     		setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.8,0,0.2)}, 47000);
 	  
 					var temporal_lobe = document.getElementById("temporal-lobe");
-					setTimeout(function() {temporal_lobe.play()}, 65000);
+					setTimeout(function() {temporal_lobe.play()}, 63000);
 					var spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
               				spritey4.position.set(2, -1, -2);
-              				setTimeout(function() {scene.add( spritey4 )}, 65000);
+              				setTimeout(function() {scene.add( spritey4 )}, 63000);
               				var spritey5 = makeTextSprite( " Temporal Lobe ", {fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
               				spritey5.position.set(2, -1, 2);
-              				setTimeout(function() {scene.add( spritey5 )}, 65000);
+              				setTimeout(function() {scene.add( spritey5 )}, 63000);
               
-              				setTimeout(function() {dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1)}, 65000);
-              				setTimeout(function() {dae.children[0].children[0].children[11].children[0].material.ambient.setRGB(1,0,1)}, 65000);
-					setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1)}, 65000);
-	      				setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(1,0,1)}, 65000);
+              				setTimeout(function() {dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1)}, 63000);
+              				setTimeout(function() {dae.children[0].children[0].children[11].children[0].material.ambient.setRGB(1,0,1)}, 63000);
+					setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1)}, 63000);
+	      				setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(1,0,1)}, 63000);
 
  					var cerebellum = document.getElementById("cerebellum");
- 					setTimeout(function() {cerebellum.play()}, 75000);
+ 					setTimeout(function() {cerebellum.play()}, 73000);
  					
      					var spritey2 = makeTextSprite( " Cerebellum ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:255, b:0, a:1.0} } );
 	 				 spritey2.position.set(-2,-2,2);	 		 
-	 				 setTimeout(function() {scene.add( spritey2 )}, 75000);
-	 				 setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0.7,0.3,0)}, 75000);
-	 				 setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0.7,0.3,0)}, 75000);
+	 				 setTimeout(function() {scene.add( spritey2 )}, 73000);
+	 				 setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0.7,0.3,0)}, 73000);
+	 				 setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0.7,0.3,0)}, 73000);
  
                      			var pituitary = document.getElementById("pituitary");
-                     			setTimeout(function() {pituitary.play()}, 90000);
+                     			setTimeout(function() {pituitary.play()}, 88000);
                      			
 	       var spritey9 = makeTextSprite( " Pituitary ", {fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:255, b:0} } );
               				spritey9.position.set(2, -1, 0);
-              				setTimeout(function() {scene.add( spritey9 )}, 90000);
-              				setTimeout(function() {dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1)}, 90000);
-              				setTimeout(function() {dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1)}, 90000);
+              				setTimeout(function() {scene.add( spritey9 )}, 88000);
+              				setTimeout(function() {dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1)}, 88000);
+              				setTimeout(function() {dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1)}, 88000);
 
                      
                      
