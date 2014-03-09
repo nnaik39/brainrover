@@ -154,7 +154,6 @@
                         var spritey, spritey1, spritey2, spritey3, spritey4, spritey5, spritey6, spritey7, spritey8;
                         var particleLight2, pointLight2;
                         var dae, skin;
-                        var tween2;
                         var x = 0;
                         var y = 0;
                         var z = 0;
@@ -301,7 +300,7 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                                 
 
                                 tween.easing(TWEEN.Easing.Cubic.InOut);
-                                tween2.easing(TWEEN.Easing.Cubic.InOut);
+                                //tween2.easing(TWEEN.Easing.Cubic.InOut);
 
 
                         } // end of init
@@ -467,8 +466,8 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                                 tween.start();
                           }
                      function tour() {
-                     	tween.start();
-                     	tween2.start();
+                     	//tween.start();
+                     	//tween2.start();
                      	setTimeout(function() {gotoFrontalLobe()}, 2000);
                      	var frontal_lobe = document.getElementById("frontal-lobe");
                      	setTimeout(function() {frontal_lobe.play()}, 2000);
