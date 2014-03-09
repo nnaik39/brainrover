@@ -1,0 +1,16 @@
+center brain rover vertical and horizontal
+
+add fullscreen to each webpage
+* index
+* tour
+* motorfunction
+
+Add Octocat and hyperlink to about page
+
+Customize Readme.md
+
+
+Adjust the margin for the canvas so that it doesn't have margin
+
+
+increas sharpness

@@ -108,13 +108,13 @@
             </div>
           <div class="IEfix">
                 <div class="row">
-                    <div id="header" class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3">
+                    <div id="header" class="">
                       <div class="header">
                     <h1>BrainRover: What Happens When...?</h1>
-                      </div>
                     </div>
                   </div>
                 </div>
+              </div>
             <script>
 
 //initialize tween here
@@ -164,7 +164,9 @@
                         } );
 
                         function init() {
-                                camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
+                          
+                                //camera.aspect =  $("#Foo").width()/ $("#Foo").width()/1.61;
+                                camera = new THREE.PerspectiveCamera( 45, $("#Foo").width()/ ($("#Foo").width()/1.61), 1, 2000 );
                                 camera.position.set( 10, 2, 3 );
 
 
@@ -226,7 +228,8 @@
                                 scene.add( pointLight2 );
 
                                 renderer = new THREE.WebGLRenderer();
-                                renderer.setSize( window.innerWidth, window.innerHeight );
+                                //renderer.setSize( window.innerWidth*0.9, window.innerHeight*0.9 );
+                                renderer.setSize( $("#Foo").width(), $("#Foo").width()/1.61);
                                 renderer.setClearColor( 0x000000, 1);
 
 
@@ -265,7 +268,6 @@
                                 theDiv = document.getElementById("Foo");
                                 theDiv.appendChild( renderer.domElement );
                                 $( ".spinner" ).remove();
-                                $( "#header" ).removeClass( "col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3" ).addClass( "col-md-12" );
 
 
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
@@ -387,11 +389,11 @@ function roundRect(ctx, x, y, w, h, r)
 
                         function onWindowResize() {
 
-                                camera.aspect = window.innerWidth / window.innerHeight;
+                                camera.aspect =  $("#Foo").width()/ ($("#Foo").width()/1.61);
                                 camera.updateProjectionMatrix();
 
-                                renderer.setSize( window.innerWidth, window.innerHeight );
-                                renderer.setSize( window.innerWidth, window.innerHeight );
+                                
+                                renderer.setSize( $("#Foo").width(), $("#Foo").width()/1.61);
 
                         }
 
@@ -418,15 +420,7 @@ function roundRect(ctx, x, y, w, h, r)
 
                                           break; //reset
                             }
-                            }
-                            function fullscreen() {if( THREEx.FullScreen.activated() ){
-                                            THREEx.FullScreen.cancel();
-                                          }else{
-                                            THREEx.FullScreen.request(theDiv);
-                                          };  //right
-                                        }
-
-
+                        }
                         function laughter() {	var introl = document.getElementById("introl");
                       				introl.play();
                       				//step 1: left side of cerebral cortex
@@ -604,7 +598,7 @@ function roundRect(ctx, x, y, w, h, r)
 
                                         // (Indeedoninterpolation is not used at all
                                         //  could be something like - one morph per each skinning pose keyframe, or even less,
-                                        n
+                                        
                                         //  animation could be resampled, morphing interpolation handles sparse keyframes quite well.
                                         //  Simple animation cycles like this look ok with 10-15 frames instead of 100 ;)
 
@@ -646,11 +640,9 @@ function roundRect(ctx, x, y, w, h, r)
                         }
 
                 </script>
-          </div>
                 <p class="lead" style="top-margin:70px">Select an activity below to find out how the brain is involved.
 			<div class="btn-group">
   				<button type="button" class="btn btn-default"><a href="javascript:clear()">Clear</a></button>
-  				<button type="button" class="btn btn-default"><a href="javascript:fullscreen()">Fullscreen</a></button>
   				<button type="button" class="btn btn-default"><a href="javascript:catchingball()">Catching a Baseball</a></button>
 				<button type="button" class="btn btn-default"><a href="javascript:laughter()">Laughing</a></button>
   			
@@ -689,11 +681,11 @@ function roundRect(ctx, x, y, w, h, r)
         $("#wrapper").toggleClass("active");
     });
 
-    $( '.scrollable' ).
-      bind( 'mousewheel DOMMouseScroll', function ( e ) {
-      e.preventDefault();
-    });
-
+//    $( '.scrollable' ).
+//      bind( 'mousewheel DOMMouseScroll', function ( e ) {
+//      e.preventDefault();
+//    });
+//
     $("#faded").delay(2000).fadeToggle(1500);
     </script>
     <audio hidden id="intro">

@@ -21,6 +21,7 @@
                 <script src="js/Detector.js"></script>
                 <script src="js/OrbitControls.js"></script>
                 <script src="js/jquery.js"></script>
+                <script src="js/THREEx.FullScreen.js"></script>
                 <script src="https://raw.github.com/sole/tween.js/master/build/tween.min.js"></script>
                     <style>
 
@@ -409,6 +410,7 @@
                                 camera.updateProjectionMatrix();
 
                                 renderer.setSize( window.innerWidth, window.innerHeight );
+                                renderer.setSize( $("#Foo").width(), $("#Foo").height());
 
                         }
 
@@ -416,13 +418,27 @@
                         {
                                 switch ( event.keyCode) 
                                 {
-                                        case 68: x += 0.1; break ; //right
                                         case 65: x -= 0.1; break ; //left
-                                        case 87: z += 0.1; break ; //left
                                         case 83: z -= 0.1; break ; //right
+                                         case 68:
+
+                                          if( THREEx.FullScreen.activated() ){
+                                            THREEx.FullScreen.cancel();
+                                          }else{
+                                            THREEx.FullScreen.request(theDiv);
+                                          }; break ; //right
+
                                         case 84: dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0.8,0.2,0); break ; //right parietal lobe
                             } 
-                        }
+                          }
+                          function fullscreen(){
+                            
+                                          if( THREEx.FullScreen.activated() ){
+                                            THREEx.FullScreen.cancel();
+                                          }else{
+                                            THREEx.FullScreen.request(theDiv);
+                                          }; 
+                          }
 
 
                         var t = 0;
@@ -484,7 +500,9 @@
             <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3 ">
               <p class="well" style="font-size: 20px; background-color: #A7FAB7">BrainRover is a simulator that explores the parts of the brain that are stimulated when different actions are performed. It provides a visual mapping of the brain with a detailed explanation of what each part does.  It displays neurological data, more specifically the different parts of the brain and the brain activity associated with certain actions.</p>
             </div>
-            
+            <div class="btn-group">
+  				<button type="button" class="btn btn-default"><a href="javascript:fullscreen()">Fullscreen</a></button>
+
             </div>
           </div>
         </div>
