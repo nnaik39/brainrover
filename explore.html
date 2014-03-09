@@ -481,6 +481,26 @@ function roundRect(ctx, x, y, w, h, r)
                                 tween.onUpdate(function(){
                                       camera.position.x = position.x;
                                       camera.position.y = position.y;
+                                      camera.position.z = position.z;
+                                });
+
+                                tween.easing(TWEEN.Easing.Cubic.InOut);
+                                tween.start();
+                          }
+                          function gotoFrontalLobe(){
+                                                        
+                                                      //added for tween example
+                                startTime = Date.now();
+                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
+                                target = { x: -7.01, y:-0.51, z:1.19 };
+                                tween = new TWEEN.Tween(position).to(target, 4000);
+                                //added for tween example
+
+                                tween.onUpdate(function(){
+                                      camera.position.x = position.x;
+                                      camera.position.y = position.y;
+                                      camera.position.z = position.z;
+
                                 });
 
                                 tween.easing(TWEEN.Easing.Cubic.InOut);
