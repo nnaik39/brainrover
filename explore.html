@@ -169,7 +169,6 @@
                         //added for tween example
 
                         var target2 = { x : 10, y: 10 };
-                        var tween2 = new TWEEN.Tween(position2).to(target2, 4000);
 
                         var loader = new THREE.ColladaLoader();
                         loader.options.convertUpAxis = false;
@@ -341,13 +340,8 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                                       camera.position.x = position.x;
                                       camera.position.y = position.y;
                                 });
-                                tween2.onUpdate(function(){
-                                      camera.position.x = position2.x;
-                                      camera.position.y = position2.y;
-                                });
 
                                 tween.easing(TWEEN.Easing.Cubic.InOut);
-                                tween2.easing(TWEEN.Easing.Cubic.InOut);
 
 
                         } // end of init
@@ -474,10 +468,26 @@ function roundRect(ctx, x, y, w, h, r)
                                         
                                        
                             }
-                        }
+                          }
+                          function gotoParietalLobe(){
+                                                        
+                                                      //added for tween example
+                                startTime = Date.now();
+                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
+                                target = { x: -6.68, y:3.99, z:-0.69 };
+                                tween = new TWEEN.Tween(position).to(target, 4000);
+                                //added for tween example
+
+                                tween.onUpdate(function(){
+                                      camera.position.x = position.x;
+                                      camera.position.y = position.y;
+                                });
+
+                                tween.easing(TWEEN.Easing.Cubic.InOut);
+                                tween.start();
+                          }
                      function tour() {
-                     	tween.start();
-                     	tween2.start();
+                       gotoParietalLobe();
                      	var frontal_lobe = document.getElementById("frontal-lobe");
                      	setTimeout(function() {frontal_lobe.play()}, 2000);
                      		 	  var spritey3 = makeTextSprite( " Frontal Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:234, g:21, b:0, a:1.0} } );
