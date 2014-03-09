@@ -392,6 +392,7 @@ p {
 }
 
 .lead {
+  margin-top:10px;
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: 200;
