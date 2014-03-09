@@ -470,7 +470,64 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
                                                    //added for tween example
                                 startTime = Date.now();
                                 position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
-                                target = { x: 6.66, y: 1.21, z:1.96 };
+                                target = { x: -8.34, y: -2.14, z: -2.67 };
+                                tween = new TWEEN.Tween(position).to(target, 4000);
+                                //added for tween example
+ 
+                                tween.onUpdate(function(){
+                                      camera.position.x = position.x;
+                                      camera.position.y = position.y;
+                                      camera.position.z = position.z;
+ 
+                                });
+ 
+                                tween.easing(TWEEN.Easing.Cubic.InOut);
+                                tween.start();
+                          }
+                          function gotoTemporalLobe(){
+                                                        
+                                                   //added for tween example
+                                startTime = Date.now();
+                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
+                                target = { x: 1.29, y: -3.66, z: 8.41 };
+                                tween = new TWEEN.Tween(position).to(target, 4000);
+                                //added for tween example
+ 
+                                tween.onUpdate(function(){
+                                      camera.position.x = position.x;
+                                      camera.position.y = position.y;
+                                      camera.position.z = position.z;
+ 
+                                });
+ 
+                                tween.easing(TWEEN.Easing.Cubic.InOut);
+                                tween.start();
+                          }
+                          function gotoCerebellum(){
+                                                        
+                                                   //added for tween example
+                                startTime = Date.now();
+                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
+                                target = { x: -6.16, y: -6.87, z: 0 };
+                                tween = new TWEEN.Tween(position).to(target, 4000);
+                                //added for tween example
+ 
+                                tween.onUpdate(function(){
+                                      camera.position.x = position.x;
+                                      camera.position.y = position.y;
+                                      camera.position.z = position.z;
+ 
+                                });
+ 
+                                tween.easing(TWEEN.Easing.Cubic.InOut);
+                                tween.start();
+                          }
+                           function gotoPituitary(){
+                                                        
+                                                   //added for tween example
+                                startTime = Date.now();
+                                position = { x :camera.position.x, y: camera.position.y, z: camera.position.z };
+                                target = { x: 6.04, y: -7.14, z: 1.51 };
                                 tween = new TWEEN.Tween(position).to(target, 4000);
                                 //added for tween example
  
@@ -518,7 +575,8 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 	 		     		setTimeout(function() {dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 25000);
  					var occipital_lobe = document.getElementById("occipital-lobe");
  					setTimeout(function() {occipital_lobe.play()}, 47000);
- 		
+
+					setTimeout(function() {gotoOccipitalLobe()}, 47000); 		
   					var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey.position.set(-2,-1,2);
 	                     		setTimeout(function() {scene.add( spritey )}, 47000);
@@ -530,6 +588,7 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 	                     		setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2)}, 47000);
 	                     		setTimeout(function() {dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.8,0,0.2)}, 47000);
 	  
+					setTimeout(function() {gotoTemporalLobe()}, 63000);
 					var temporal_lobe = document.getElementById("temporal-lobe");
 					setTimeout(function() {temporal_lobe.play()}, 63000);
 					var spritey4 = makeTextSprite( " Temporal Lobe ", {fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:125, b:130} } );
@@ -544,6 +603,7 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 					setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1)}, 63000);
 	      				setTimeout(function() {dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(1,0,1)}, 63000);
 
+					setTimeout(function() {gotoCerebellum()}, 73000);
  					var cerebellum = document.getElementById("cerebellum");
  					setTimeout(function() {cerebellum.play()}, 73000);
  					
@@ -554,13 +614,13 @@ rightParietalLobe=dae.children[0].children[0].children[10].children[0].children[
 	 				 setTimeout(function() {dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0.7,0.3,0)}, 73000);
  
                      			var pituitary = document.getElementById("pituitary");
-                     			setTimeout(function() {pituitary.play()}, 88000);
+                     			setTimeout(function() {pituitary.play()}, 100000);
                      			
-	       var spritey9 = makeTextSprite( " Pituitary ", {fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:255, b:0} } );
+	       				var spritey9 = makeTextSprite( " Pituitary ", {fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:255, b:0} } );
               				spritey9.position.set(2, -1, 0);
-              				setTimeout(function() {scene.add( spritey9 )}, 88000);
-              				setTimeout(function() {dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1)}, 88000);
-              				setTimeout(function() {dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1)}, 88000);
+              				setTimeout(function() {scene.add( spritey9 )}, 100000);
+              				setTimeout(function() {dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1)}, 100000);
+              				setTimeout(function() {dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1)}, 100000);
 
                      
                      
