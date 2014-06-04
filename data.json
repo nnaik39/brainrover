@@ -7,28 +7,27 @@
         "TemporalLobe": "makeTextSprite( \" Temporal Lobe \", {fontsize: thefontsize, fontface: \"Georgia\", borderColor: {r:0, g:125, b:130} } );",
         "Pituitary": "makeTextSprite( \" Pituitary \", {fontsize: thefontsize, fontface: \"Georgia\", borderColor: {r:0, g:255, b:0} \": ]\" } );",
         
-    }
-    
-        "highlights": {
-            "occipitallobe_r": "dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2);
+    }"highlights": {
+        "occipitallobe_r": "dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2);
 	                     		dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.8,0.2,0);",
-            "occipitallobe_l": "dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.8,0,0.2);
+        "occipitallobe_l": "dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.8,0,0.2);
 	                     		dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.8,0,0.2",
-            "parietallobe_r": "dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.9,0.1);
+        "parietallobe_r": "dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.9,0.1);
 	 		     		dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.9,0.1);",
-            "parietallobe_l": "dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(0,0.9,0.1);
+        "parietallobe_l": "dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(0,0.9,0.1);
 	 		     		dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0,0.9,0.1);",
-	 		"cerebellum": "dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0.7,0.3,0);
+        "cerebellum": "dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0.7,0.3,0);
 	 				 dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0.7,0.3,0);",
-	 		"frontallobe_l": "dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.4,0.6);
+        "frontallobe_l": "dae.children[0].children[0].children[8].children[0].children[0].material.color.setRGB(0,0.4,0.6);
 	                     		dae.children[0].children[0].children[8].children[0].children[0].material.ambient.setRGB(0,0.4,0.6);",
-	 		"frontallobe_r": "dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6);
+        "frontallobe_r": "dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6);
 	                     		dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6);",
-	        "temporallobe_l": "dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1);
+        "temporallobe_l": "dae.children[0].children[0].children[11].children[0].material.color.setRGB(1,0,1);
               				dae.children[0].children[0].children[11].children[0].material.ambient.setRGB(1,0,1);",
-	        "temporallobe_r": "dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1);
+        "temporallobe_r": "dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1);
 	      				dae.children[0].children[0].children[12].children[0].material.ambient.setRGB(1,0,1);",
-	        "pituitary": "dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1);
+        "pituitary": "dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1);
               				dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1);",
-        }
+        
+    }
 }
