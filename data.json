@@ -5,9 +5,11 @@
         "Cerebellum": "makeTextSprite( \" Cerebellum \", { fontsize: thefontsize, fontface: \"Georgia\", borderColor: {r:0, g:255, b:0, a:1.0} } );",
         "FrontalLobe": "makeTextSprite( \" Frontal Lobe \", { fontsize: thefontsize, fontface: \"Georgia\", borderColor: {r:234, g:21, b:0, a:1.0} } );",
         "TemporalLobe": "makeTextSprite( \" Temporal Lobe \", {fontsize: thefontsize, fontface: \"Georgia\", borderColor: {r:0, g:125, b:130} } );",
-        "Pituitary": "makeTextSprite( \" Pituitary \", {fontsize: thefontsize, fontface: \"Georgia\", borderColor: {r:0, g:255, b:0} \": ]\" } );",
+        "Pituitary": "makeTextSprite( \" Pituitary \", {fontsize: thefontsize, fontface: \"Georgia\", borderColor: {r:0, g:255, b:0} \": ]\" } );"
         
-    }"highlights": {
+    },
+    
+    "highlights": {
         "occipitallobe_r": "dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2);
 	                     		dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.8,0.2,0);",
         "occipitallobe_l": "dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.8,0,0.2);
