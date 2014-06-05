@@ -153,6 +153,12 @@
                                 document.getElementById("myspinner").style.visibility="hidden";
                         } );
 
+			function highlight(child, r, g, b) {
+					dae.children[0].children[0].children[child].children[0].children[0].material.color.setRGB(r,g,b);
+	 		     		dae.children[0].children[0].children[child].children[0].children[0].material.ambient.setRGB(r,g,b);
+	 	
+			}
+
                         function init() {
                                 camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
                                 camera.position.set( 10, 2, 3 );
