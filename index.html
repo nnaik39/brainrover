@@ -253,8 +253,10 @@
 	                 var spritey8 = makeTextSprite( " Occipital Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey8.position.set(-2,-1,-3);
 	                     		scene.add( spritey8 );
-	                     		highlight(14, 0.8,0,0.2);
-	                     		highlight(13, 0.8,0,0.2);
+	                     		dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.8,0,0.2);
+	                     		dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.8,0,0.2);
+	                     		dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.8,0,0.2);
+	                     		dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.8,0.2,0);
 	  var spritey1 = makeTextSprite( " Parietal Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:255, g:0, b:0, a:1.0}, backgroundColor: {r:255, g:100, b:100, a:0.8} } );
 	 		     		spritey1.position.set(-2,2,2);
 	 		     		scene.add( spritey1 );
