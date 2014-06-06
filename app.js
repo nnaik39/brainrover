@@ -122,10 +122,8 @@
                                     }
 
                                   }
-
+					setMaterial(dae);
                                 }
-
-                               setMaterial(dae);
 
   //labels for the different parts
 				function labels() {  
