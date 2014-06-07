@@ -149,11 +149,6 @@
                                 dae.position.y = y;
                                 dae.position.z = z;
                                 init();
-                                add();
-                                camera();
-                                grid();
-                                lights();
-                                labels();
                                 animate();
                                 document.getElementById("myspinner").style.visibility="hidden";
                         } );
@@ -164,7 +159,7 @@
 	 	
 			}
 
-                        function camera() {
+                        function init() {
                                 camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 2000 );
                                 camera.position.set( 10, 2, 3 );
 
@@ -175,10 +170,10 @@
 
                                         controls = new THREE.OrbitControls( camera );
                                // controls.addEventListener( 'change', render );
-                        }
+
 
                                 // Grid
-			function grid() {
+
                                 var size = 14, step = 1;
 
                                 var geometry = new THREE.Geometry();
@@ -196,9 +191,9 @@
 
                                 var line = new THREE.Line( geometry, material, THREE.LinePieces );
                                 scene.add( line );
-			}
+
                                 // Add the COLLADA
-			function add() {
+
                                 scene.add( dae );
 
 
@@ -206,9 +201,9 @@
                                 scene.add( particleLight );
                                 particleLight2 = new THREE.Mesh( new THREE.SphereGeometry( 0.1, 4, 4 ), new THREE.MeshBasicMaterial( { color: 0xff00dd } ) );
                                 scene.add( particleLight2 );
-			}
+
                                 // Lights
-			function lights() {
+
                                 scene.add( new THREE.AmbientLight( 0x666666 ) );
 
                                 var directionalLight = new THREE.DirectionalLight(/*Math.random() * 0xffffff*/0xeeeeee );
@@ -241,8 +236,7 @@
                                     for (var i=0, thelength=node.children.length; i < thelength ; i++ ) {
 
                                       setMaterial(node.children[i]);
-                                    }
-                                    
+
                                     }
 
                                   }
@@ -252,7 +246,7 @@
                                setMaterial(dae);
 
   //labels for the different parts
-				function labels() {  
+  
     var spritey = makeTextSprite( " Occipital Lobe ", { fontsize: thefontsize, fontface: "Georgia", borderColor: {r:0, g:0, b:255, a:1.0} } );
 	                     		spritey.position.set(-2,-1,2);
 	                     		scene.add( spritey );
@@ -309,7 +303,7 @@
               				scene.add( spritey9 );
               				dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1);
               				dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1);
-}
+
 // middle brain: dae.children[0].children[0].children[4].children[0].material.color.setRGB(1,0,1)
 // cerebellum: dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(1,1,1)
 // pituitary: dae.children[0].children[0].children[2].children[0].material.color.setRGB(1,1,1) 
@@ -324,7 +318,6 @@
 //                                setMaterial(dae, new THREE.MeshBasicMaterial({color: 0xff0000}));
 
 //////////////////////////////
-				function init() {
                                 var theDiv = document.getElementById("Foo");
                                 theDiv.appendChild( renderer.domElement );
                                 $( ".spinner" ).remove();
@@ -334,9 +327,9 @@
 
                                 document.addEventListener( 'keydown', onDocumentKeyDown, false);
                                 window.addEventListener( 'resize', onWindowResize, false );
-				}
 
-                        
+
+                        }
 
 			function makeTextSprite( message, parameters )
 			{
