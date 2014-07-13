@@ -1,5 +1,7 @@
 // The controls variable determines how the user navigates the model.
 // The tween variable moves the camera's position automatically.
+// Work on highlights, text sprite positions
+// Fix loader
 var tween;
 var controls;
 
