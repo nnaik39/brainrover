@@ -161,6 +161,8 @@ function labels() {
 	
 	firebase.child("highlight").once('value', function(data) {
 		$.each(data.val(), function(index, value) {
+			console.log(index);
+			console.log(value);
 			highlight(value.child, value.r, value.g, value.b, value.child_depth);	
 		});
 	});
