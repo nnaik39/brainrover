@@ -160,14 +160,18 @@ function labels() {
 	var firebase = new Firebase("https://rover.firebaseio.com");
 	
 	firebase.child("highlight").once('value', function(data) {
+		if (data.val() != null) { 
 		$.each(data.val(), function(index, value) {
 			console.log(index);
 			console.log(value);
-			highlight(value.child, value.r, value.g, value.b, value.child_depth);	
+			highlight(value.child, value.r, value.g, value.b, value.child_depth);
+							
 		});
+		}
 	});
 	
 	firebase.child("sprites").once('value', function(data) {
+		if (data.val() != null) {
 		$.each(data.val(), function(name, value) {
 			var sprite = makeTextSprite(name, {
 				fontsize: thefontsize,
@@ -179,9 +183,11 @@ function labels() {
 			                a: value.a	
 				}
 			});
+		
 			sprite.position.set(value.x, value.y, value.z || 0);
 			scene.add(sprite);
 		});	
+	}
 	});
 	
 }
