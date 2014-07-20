@@ -51,6 +51,7 @@ loader.load( './models/collada/brainmodel/NewBrain.dae', function ( c ) {
 
 // depth = the number of 0s after the child name
 // This calls a certain child and sets the material of the child to one with RGB values r, g, and b.
+// This function is broken
 function highlight(child, r, g, b, depth) {
     if (depth == 2) {
         dae.children[0].children[0].children[child].children[0].children[0].material.color.setRGB(r,g,b);
