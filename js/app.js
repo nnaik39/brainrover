@@ -2,7 +2,8 @@
 // The tween variable moves the camera's position automatically.
 
 //TODO:
-// Work on highlights, text sprite positions
+// Work on highlights
+// Fix ugly text sprite labels
 // Fix loader
 
 var tween;
