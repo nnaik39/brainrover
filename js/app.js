@@ -166,7 +166,7 @@ function initializeLight() {
 function labels() {  
 	var firebase = new Firebase("https://rover.firebaseio.com");
 	
-	firebase.child("highlight").once('value', function(data) {
+	firebase.child("highlights").once('value', function(data) {
 		if (data.val() != null) { 
 		$.each(data.val(), function(index, value) {
 			console.log(index);
