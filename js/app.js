@@ -59,7 +59,7 @@ function highlight(child, r, g, b, depth) {
         dae.children[0].children[0].children[child].children[0].children[0].material.ambient.setRGB(r,g,b);
     }
     else {
-        dae.children[0].children[0].children[child].children[0].material.color.setRGB(r,g,b);
+        dae.children[0].children[0].children[child].children.material.color.setRGB(r,g,b);
         dae.children[0].children[0].children[child].children[0].material.ambient.setRGB(r,g,b);
     }
 }
@@ -77,7 +77,7 @@ function initialize() {
 function initializeScene() {
     dae = collada.scene;
     dae.scale.x = dae.scale.y = 1;
-    dae.scale.z = 1;
+m    dae.scale.z = 1;
     dae.updateMatrix();
     dae.position.x = x;
     dae.position.y = y;
