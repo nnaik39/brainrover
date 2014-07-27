@@ -77,7 +77,7 @@ function initialize() {
 function initializeScene() {
     dae = collada.scene;
     dae.scale.x = dae.scale.y = 1;
-m    dae.scale.z = 1;
+    dae.scale.z = 1;
     dae.updateMatrix();
     dae.position.x = x;
     dae.position.y = y;
