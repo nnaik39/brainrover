@@ -3,8 +3,8 @@
 
 //TODO:
 // Fix ugly text sprite labels
-// Fix loader
 // Draw up mocks of CSS plans
+// Fix highlights bug
 
 var tween;
 var controls;
