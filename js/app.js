@@ -4,6 +4,8 @@
 //TODO:
 // Fix ugly text sprite labels
 // Draw up mocks of CSS plans
+// Fix explore rendering
+// Fix explore and motorfunction headings
 // Fix highlights bug
 
 var tween;
