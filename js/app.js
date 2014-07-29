@@ -7,6 +7,7 @@
 // Fix explore rendering
 // Fix explore and motorfunction headings
 // Fix highlights bug
+// Add tweening to motorfunction
 
 var tween;
 var controls;
