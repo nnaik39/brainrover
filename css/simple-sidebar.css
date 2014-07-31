@@ -9,6 +9,7 @@
   right:0px;
   height:50px;
   background:rgba(255, 255, 255, 0.2);
+  z-index:1000;
 }
 
 #sidebar-wrapper {
