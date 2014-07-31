@@ -2,6 +2,15 @@
   transition: all 0.4s ease 0s;
 }
 
+#navbar-wrapper {
+  position:fixed;
+  top:0px;
+  left:0px;
+  right:0px;
+  height:50px;
+  background:rgba(255, 255, 255, 0.2);
+}
+
 #sidebar-wrapper {
   width: 200px;
   background: rgba(0, 0, 0, 0.2);
@@ -78,10 +87,6 @@
   display: none;
 }
 
-.inset {
-  padding: 20px;
-}
-
 @media (max-width:767px) {
 
 #wrapper {
@@ -105,10 +110,6 @@
 
 #menu-toggle {
   display: inline-block;
-}
-
-.inset {
-  padding: 15px;
 }
 
 }
