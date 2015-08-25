@@ -12,6 +12,8 @@
 var tween;
 var controls;
 
+//i think the bug is in the order that i call the functions in initialize. CHECK WITH MOTORFUNCTION.
+
 // The theDiv variable helps set the fullscreen function to the size of the screen.
 // The collada variable render the model using the scene tool.
 var theDiv;
