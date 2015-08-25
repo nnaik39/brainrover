@@ -69,15 +69,6 @@ function highlight(child, r, g, b, depth) {
     }
 }
 
-// This initializes the scene, camera, controls, grids, and lights.
-function initialize() {
-    initializeScene();
-    initializeCamera();
-    initializeControls();
-    initializeGrid();
-    initializeLight();
-};
-
 // This creates the scene, scales the model, and adds the model to the scene.
 function initializeScene() {
     dae = collada.scene;
@@ -390,4 +381,20 @@ function render() {
 
     //moved this code to initialization
 
+}
+
+// This initializes the scene, camera, controls, grids, and lights.
+/*function initialize() {
+//    initializeScene();
+  //  initializeCamera();
+    initializeControls();
+    initializeGrid();
+    initializeLight();
+};*/
+function initialize() {
+	initializeCamera();
+	initializeScene();
+	initializeControls();
+	initializeGrid();
+	initializeLight();
 }
