@@ -69,6 +69,7 @@ function highlight(child, r, g, b, depth) {
 
 // This initializes the scene, camera, controls, grids, and lights.
 function initialize() {
+    console.log("initialize called");
     initializeScene();
     initializeCamera();
     initializeControls();
