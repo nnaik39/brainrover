@@ -209,8 +209,8 @@ function labels() {
 // This removes the spinner, and removes a Bootstrap class.
 //This also listens for the keyDown and windowResize events and declares them false.
 function init() {
-	 var theDiv = document.getElementById("Foo");
-         theDiv.appendChild( renderer.domElement );
+//	 var theDiv = document.getElementById("Foo");
+//         theDiv.appendChild( renderer.domElement );
 	 $( ".spinner" ).remove();
 	 $( "#header" ).removeClass( "col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3" ).addClass( "col-md-12" );
 	 document.addEventListener( 'keydown', onDocumentKeyDown, false);
