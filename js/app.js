@@ -6,7 +6,6 @@
 // Draw up mocks of CSS plans
 // Fix explore rendering
 // Fix explore and motorfunction headings
-// Fix highlights bug
 // Add tweening to motorfunction
 
 var tween;
@@ -57,7 +56,6 @@ loader.load( './models/collada/brainmodel/NewBrain.dae', function ( c ) {
 
 // depth = the number of 0s after the child name
 // This calls a certain child and sets the material of the child to one with RGB values r, g, and b.
-// This function is broken
 function highlight(child, r, g, b, depth) {
     if (depth == 2) {
         dae.children[0].children[0].children[child].children[0].children[0].material.color.setRGB(r,g,b);
@@ -211,10 +209,12 @@ function labels() {
 // This removes the spinner, and removes a Bootstrap class.
 //This also listens for the keyDown and windowResize events and declares them false.
 function init() {
-$( ".spinner" ).remove();
-$( "#header" ).removeClass( "col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3" ).addClass( "col-md-12" );
-document.addEventListener( 'keydown', onDocumentKeyDown, false);
-window.addEventListener( 'resize', onWindowResize, false );
+	 var theDiv = document.getElementById("Foo");
+         theDiv.appendChild( renderer.domElement );
+	 $( ".spinner" ).remove();
+	 $( "#header" ).removeClass( "col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-3" ).addClass( "col-md-12" );
+	 document.addEventListener( 'keydown', onDocumentKeyDown, false);
+	 window.addEventListener( 'resize', onWindowResize, false );
 }
 
 
@@ -328,14 +328,13 @@ function fullscreen(){
 }
 
 
-var t = 0;
-var clock = new THREE.Clock();
 
 // This animates the model, causing it to react in realtime.
 
 function animate() {
-
-    var delta = clock.getDelta();
+	var t = 0;
+	var clock = new THREE.Clock();
+        var delta = clock.getDelta();
 
 
     requestAnimationFrame( animate );
