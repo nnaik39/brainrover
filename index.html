@@ -403,7 +403,7 @@
 
                                         // (Indeedoninterpolation is not used at all
                                         //  could be something like - one morph per each skinning pose keyframe, or even less,
-                                        n
+                                        
                                         //  animation could be resampled, morphing interpolation handles sparse keyframes quite well.
                                         //  Simple animation cycles like this look ok with 10-15 frames instead of 100 ;)
 
@@ -432,7 +432,7 @@
 	                     	dae.children[0].children[0].children[7].children[0].children[0].material.color.setRGB(0,0.4,0.6);
 	                     	dae.children[0].children[0].children[7].children[0].children[0].material.ambient.setRGB(0,0.4,0.6);
 				dae.children[0].children[0].children[9].children[0].children[0].material.color.setRGB(0,0.9,0.1);
-	 		     	dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0,0.9,0.1)}, 25000);
+	 		     	dae.children[0].children[0].children[9].children[0].children[0].material.ambient.setRGB(0,0.9,0.1);
 	 		     	dae.children[0].children[0].children[10].children[0].children[0].material.color.setRGB(0,0.9,0.1);
 	 		     	dae.children[0].children[0].children[10].children[0].children[0].material.ambient.setRGB(0,0.9,0.1);
 				dae.children[0].children[0].children[12].children[0].material.color.setRGB(1,0,1);
@@ -440,8 +440,11 @@
  				dae.children[0].children[0].children[3].children[0].children[0].material.color.setRGB(0.7,0.3,0);
 	 			dae.children[0].children[0].children[3].children[0].children[0].material.ambient.setRGB(0.7,0.3,0);
 				dae.children[0].children[0].children[2].children[0].material.color.setRGB(0,1,1);
+				dae.children[0].children[0].children[14].children[0].material.color.setRGB(0.3,0.7,0);
+                      		dae.children[0].children[0].children[14].children[0].material.ambient.setRGB(0.3,0.7,0);
               			dae.children[0].children[0].children[2].children[0].material.ambient.setRGB(0,1,1);
-
+				dae.children[0].children[0].children[13].children[0].material.color.setRGB(0.3,0.7,0);
+                      		dae.children[0].children[0].children[13].children[0].material.ambient.setRGB(0.3,0.7,0);
                                 var timer = Date.now() * 0.0004;
                                 particleLight.position.x = Math.sin( timer * 5 ) * 4;
                                 particleLight.position.y = Math.cos( timer * 3 ) * 4;
