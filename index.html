@@ -425,7 +425,8 @@
                         }
 
                         function render() {
-
+				dae.children[0].children[0].children[11].children[0].material.color.setRGB(1, 0, 1);
+				dae.children[0].children[0].children[11].children[0].material.ambient.setRGB(1, 0, 1);
                                 var timer = Date.now() * 0.0004;
                                 particleLight.position.x = Math.sin( timer * 5 ) * 4;
                                 particleLight.position.y = Math.cos( timer * 3 ) * 4;
